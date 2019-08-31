@@ -4,6 +4,44 @@ public struct Title: Hashable {
     
     private static let formatters: [() -> String] = [
         {
+            return Noun().description.firstUppercased
+        },
+        {
+            return Noun().description.firstUppercased
+        },
+        {
+            return Noun().description.firstUppercased
+        },
+        {
+            let noun = Noun()
+            let vowelNoun = noun.description.startsWithVowel
+            return "\(Determiner(forVowel: vowelNoun)) \(noun)".capitalized
+        },
+        {
+            return Adjective().description.firstUppercased
+        },
+        {
+            return Adjective().description.firstUppercased
+        },
+        {
+            return Adjective().description.firstUppercased
+        },
+        {
+            return Adverb().description.firstUppercased
+        },
+        {
+            return Verb(tense:"present perfect").description.firstUppercased
+        },
+        {
+            return "\(Noun()) \(Adverb()) \(Verb(tense:"present"))".capitalized
+        },
+        {
+            return "\(Verb(tense:"present perfect")) \(Noun())".capitalized
+        },
+        {
+            return "\(Noun())-\(Verb(tense:"present perfect"))".capitalized
+        },
+        {
             let opener = ["When", "Where", "Why", "As"].randomElement()!
             let noun = Noun().description.firstUppercased
             let vowelNoun = noun.startsWithVowel
@@ -11,7 +49,31 @@ public struct Title: Hashable {
             return "\(opener) \(Determiner(forVowel: vowelNoun)) \(noun) \(verb)"
         },
         {
+            let opener = ["When", "Where", "Why", "While", "As", "Until", "Unless", "Because", "And", "But"].randomElement()!
+            let pronoun = Pronoun()
+            let verb: String
+            
+            let presentTense = Bool.random()
+            if presentTense {
+                if !pronoun.isSingular {
+                    verb = Verb(tense:"base").description.firstUppercased
+                } else if pronoun.isThirdPerson {
+                    verb = Verb(tense:"present").description.firstUppercased
+                } else {
+                    verb = Verb(tense:"base").description.firstUppercased
+                }
+            } else {
+                verb = Verb(tense:"past").description.firstUppercased
+            }
+            
+            let elipsisPrefix = Bool.random(probability: 20) ? "..." : ""
+            return "\(elipsisPrefix)\(opener) \(pronoun.description.firstUppercased) \(verb)"
+        },
+        {
             return "\(TimeOfDay()) \(Verb(tense:"present"))".capitalized
+        },
+        {
+            return "\(TimeOfDay()) \(Noun())".capitalized
         },
         {
             return "\(Adjective()) \(Noun())".capitalized
@@ -20,17 +82,9 @@ public struct Title: Hashable {
             return "\(Adjective()) \(Verb(tense:"present perfect"))".capitalized
         },
         {
-            let noun = Noun()
-            let vowelNoun = noun.description.startsWithVowel
-            return "\(Determiner(forVowel: vowelNoun)) \(noun)".capitalized
-        },
-        {
             let adjective = Adjective()
             let vowelAdjective = adjective.description.startsWithVowel
             return "\(Determiner(forVowel: vowelAdjective)) \(adjective) \(Noun())".capitalized
-        },
-        {
-            return "\(TimeOfDay()) \(Noun())".capitalized
         },
         {
             let noun = Noun()
@@ -42,7 +96,7 @@ public struct Title: Hashable {
                 result = "\(Determiner(forVowel: vowelNoun)) \(noun) \(Verb(tense: "present"))"
 
             case 2:
-                let connector = ["Will", "Shall", "Can"].randomElement()!
+                let connector = ["Will", "Shall", "Can", "Must", "May"].randomElement()!
                 result = "\(Determiner(forVowel: vowelNoun)) \(noun) \(connector) \(Verb())"
 
             case 3:
@@ -88,12 +142,36 @@ public struct Title: Hashable {
             }
         },
         {
-            return "\(Noun()) \(Adverb()) \(Verb(tense:"present"))".capitalized
-        },
-        {
-            return "\(Verb(tense:"present perfect")) \(Noun())".capitalized
-        }
+            let wordCount = Int.random(in: 2...4)
+            var words: [String] = []
+            
+            switch Int.random(in: 0...2) {
+            case 0:
+                for _ in 1...wordCount {
+                    words.append(Noun().description.firstUppercased)
+                }
+            case 1:
+                for _ in 1...wordCount {
+                    words.append(Adverb().description.firstUppercased)
+                }
+            default:
+                for _ in 1...wordCount {
+                    words.append(Verb(tense:"base").description.firstUppercased)
+                }
+            }
+            
+            let separator: String
+            switch Int.random(in: 0...2) {
+            case 0:
+                separator = " - "
+            case 1:
+                separator = ", "
+            default:
+                separator = "..."
+            }
 
+            return words.joined(separator: separator)
+        }
     ]
     
     private let value: String

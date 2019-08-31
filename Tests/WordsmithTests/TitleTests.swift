@@ -17,7 +17,7 @@ class TitleTests: XCTestCase {
         var generatedValues = Set<Title>()
         var consecutiveRetries = 0
         
-        while consecutiveRetries < 10 {
+        while consecutiveRetries < 20 {
             let value = Title()
             
             if generatedValues.contains(value) {
