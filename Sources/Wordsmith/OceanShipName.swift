@@ -37,6 +37,15 @@ public struct OceanShipName: Hashable {
             return "\(OceanShipNameColor()) \(OceanShipNameObject())".capitalized
         },
         {
+            return ShipNameAdjective().description.firstUppercased
+        },
+        {
+            return "\(ShipNameAdjective()) \(OceanShipNameObject())".capitalized
+        },
+        {
+            return "\(ShipNameAdjective()) \(OceanShipNameObject())".capitalized
+        },
+        {
             return "\(TimeOfDay()) \(MartialSocialConcept())".capitalized
         },
         {
