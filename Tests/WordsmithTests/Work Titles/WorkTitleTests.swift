@@ -3,22 +3,22 @@
 import XCTest
 @testable import Wordsmith
 
-class TitleTests: XCTestCase {
+class WorkTitleTests: XCTestCase {
     
     func testInitializer() {
         for _ in 1...100 {
-            let title = Title()
+            let title = WorkTitle()
             XCTAssertNotNil(title.description)
             print(title)
         }
     }
     
     func testUniqueness() {
-        var generatedValues = Set<Title>()
+        var generatedValues = Set<WorkTitle>()
         var consecutiveRetries = 0
         
-        while consecutiveRetries < 20 {
-            let value = Title()
+        while consecutiveRetries < 10 {
+            let value = WorkTitle()
             
             if generatedValues.contains(value) {
                 consecutiveRetries += 1

@@ -1,46 +1,10 @@
+//  Created by B.T. Franklin on 9/1/19
+
 import Foundation
 
-public struct Title: Hashable {
+public struct ComplexWorkTitle: Hashable {
     
     private static let formatters: [() -> String] = [
-        {
-            return Noun().description.firstUppercased
-        },
-        {
-            return Noun().description.firstUppercased
-        },
-        {
-            return Noun().description.firstUppercased
-        },
-        {
-            let noun = Noun()
-            let vowelNoun = noun.description.startsWithVowel
-            return "\(Determiner(forVowel: vowelNoun)) \(noun)".capitalized
-        },
-        {
-            return Adjective().description.firstUppercased
-        },
-        {
-            return Adjective().description.firstUppercased
-        },
-        {
-            return Adjective().description.firstUppercased
-        },
-        {
-            return Adverb().description.firstUppercased
-        },
-        {
-            return Verb(tense:"present perfect").description.firstUppercased
-        },
-        {
-            return "\(Noun()) \(Adverb()) \(Verb(tense:"present"))".capitalized
-        },
-        {
-            return "\(Verb(tense:"present perfect")) \(Noun())".capitalized
-        },
-        {
-            return "\(Noun())-\(Verb(tense:"present perfect"))".capitalized
-        },
         {
             let opener = ["When", "Where", "Why", "As"].randomElement()!
             let noun = Noun().description.firstUppercased
@@ -68,23 +32,6 @@ public struct Title: Hashable {
             
             let elipsisPrefix = Bool.random(probability: 20) ? "..." : ""
             return "\(elipsisPrefix)\(opener) \(pronoun.description.firstUppercased) \(verb)"
-        },
-        {
-            return "\(TimeOfDay()) \(Verb(tense:"present"))".capitalized
-        },
-        {
-            return "\(TimeOfDay()) \(Noun())".capitalized
-        },
-        {
-            return "\(Adjective()) \(Noun())".capitalized
-        },
-        {
-            return "\(Adjective()) \(Verb(tense:"present perfect"))".capitalized
-        },
-        {
-            let adjective = Adjective()
-            let vowelAdjective = adjective.description.startsWithVowel
-            return "\(Determiner(forVowel: vowelAdjective)) \(adjective) \(Noun())".capitalized
         },
         {
             let noun = Noun()
@@ -161,11 +108,13 @@ public struct Title: Hashable {
             }
             
             let separator: String
-            switch Int.random(in: 0...2) {
+            switch Int.random(in: 0...3) {
             case 0:
                 separator = " - "
             case 1:
                 separator = ", "
+            case 2:
+                separator = "/"
             default:
                 separator = "..."
             }
@@ -177,12 +126,12 @@ public struct Title: Hashable {
     private let value: String
     
     public init() {
-        value = Title.formatters.randomElement()!()
+        value = ComplexWorkTitle.formatters.randomElement()!()
     }
     
 }
 
-extension Title: CustomStringConvertible {
+extension ComplexWorkTitle: CustomStringConvertible {
     public var description: String {
         return value
     }
