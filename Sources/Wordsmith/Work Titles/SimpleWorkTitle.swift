@@ -36,9 +36,6 @@ public struct SimpleWorkTitle: Hashable {
             return Verb(tense:"present perfect").description.firstUppercased
         },
         {
-            return "\(Noun()) \(Adverb()) \(Verb(tense:"present"))".capitalized
-        },
-        {
             return "\(Verb(tense:"present perfect")) \(Noun())".capitalized
         },
         {

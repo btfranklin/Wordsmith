@@ -6,6 +6,9 @@ public struct ComplexWorkTitle: Hashable {
     
     private static let formatters: [() -> String] = [
         {
+            return "\(Noun()) \(Adverb()) \(Verb(tense:"present"))".capitalized
+        },
+        {
             let opener = ["When", "Where", "Why", "As"].randomElement()!
             let noun = Noun().description.firstUppercased
             let vowelNoun = noun.startsWithVowel
