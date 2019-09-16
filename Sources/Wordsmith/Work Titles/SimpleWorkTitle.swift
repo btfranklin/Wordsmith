@@ -51,12 +51,36 @@ public struct SimpleWorkTitle: Hashable {
             return "\(Adjective()) \(Noun())".capitalized
         },
         {
+            return "\(Adjective()) \(Noun())".capitalized
+        },
+        {
+            return "The \(Adjective()) \(Noun())".capitalized
+        },
+        {
+            let thing = Bool.random() ?
+                Noun().description.firstUppercased :
+                "\(Adjective()) \(Noun())".capitalized
+            
+            var prepositionalPhrase: String? = nil
+            if Bool.random() {
+                let preposition = Bool.random() ? "in" : "of"
+                prepositionalPhrase = " \(preposition) \(TownName())"
+            }
+            return "The \(thing)\(prepositionalPhrase ?? "")"
+        },
+        {
             return "\(Adjective()) \(Verb(tense:"present perfect"))".capitalized
         },
         {
             let adjective = Adjective()
             let vowelAdjective = adjective.description.startsWithVowel
             return "\(Determiner(forVowel: vowelAdjective)) \(adjective) \(Noun())".capitalized
+        },
+        {
+            return "\(CommonPersonName())"
+        },
+        {
+            return "\(TownName())"
         },
     ]
     

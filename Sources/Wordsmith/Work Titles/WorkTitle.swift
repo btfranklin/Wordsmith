@@ -2,27 +2,11 @@ import Foundation
 
 public struct WorkTitle: Hashable {
     
-    private static let formatters: [() -> String] = [
-        {
-            return SimpleWorkTitle().description
-        },
-        {
-            return SimpleWorkTitle().description
-        },
-        {
-            return SimpleWorkTitle().description
-        },
-        {
-            return ComplexWorkTitle().description
-        },
-    ]
-    
     private let value: String
     
     public init() {
-        value = WorkTitle.formatters.randomElement()!()
+        value = Bool.random(probability: 85) ? SimpleWorkTitle().description : ComplexWorkTitle().description
     }
-    
 }
 
 extension WorkTitle: CustomStringConvertible {

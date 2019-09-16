@@ -111,19 +111,61 @@ public struct ComplexWorkTitle: Hashable {
             }
             
             let separator: String
-            switch Int.random(in: 0...3) {
+            var ender: String?
+            switch Int.random(in: 0...5) {
             case 0:
                 separator = " - "
             case 1:
                 separator = ", "
             case 2:
                 separator = "/"
+            case 3:
+                separator = "! "
+                ender = "!"
+            case 4:
+                separator = "; "
             default:
                 separator = "..."
             }
+            
+            let joinedWords = words.joined(separator: separator)
 
-            return words.joined(separator: separator)
-        }
+            return "\(joinedWords)\(ender ?? "")"
+        },
+        {
+            let personName = CommonPersonGivenName().description
+            let possessivePersonName: String
+            if personName.last == "s" {
+                possessivePersonName = "\(personName)'"
+            } else {
+                possessivePersonName = "\(personName)'s"
+            }
+            
+            return "\(possessivePersonName) \(Adjective()) \(Noun())".capitalized
+        },
+        {
+            let emotion1 = UCBerkeleyEmotion().description.firstUppercased
+            var emotion2: String
+            repeat {
+                emotion2 = UCBerkeleyEmotion().description.firstUppercased
+            } while emotion1 == emotion2
+            return "\(emotion1) and \(emotion2)"
+        },
+        {
+            let emotionPhrase: String
+            if Bool.random() {
+                let emotion1 = UCBerkeleyEmotion().description.firstUppercased
+                var emotion2: String
+                repeat {
+                    emotion2 = UCBerkeleyEmotion().description.firstUppercased
+                } while emotion1 == emotion2
+                emotionPhrase = "\(emotion1) and \(emotion2)"
+            } else {
+                emotionPhrase = UCBerkeleyEmotion().description.firstUppercased
+            }
+            
+            return "\(emotionPhrase) in \(TownName())"
+        },
     ]
     
     private let value: String
