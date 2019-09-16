@@ -34,52 +34,70 @@ public struct OceanShipName: Hashable {
             return OceanShipNameObject().description.firstUppercased
         },
         {
-            return "\(OceanShipNameColor()) \(OceanShipNameObject())".capitalized
+            let thing: CustomStringConvertible = Bool.random(probability: 75) ? OceanShipNameObject() : PrimitiveWeapon()
+            return "\(OceanShipNameColor()) \(thing)".capitalized
         },
         {
             return ShipNameAdjective().description.firstUppercased
         },
         {
-            return "\(ShipNameAdjective()) \(OceanShipNameObject())".capitalized
+            let thing: CustomStringConvertible = Bool.random(probability: 85) ? OceanShipNameObject() : PrimitiveWeapon()
+            return "\(ShipNameAdjective()) \(thing)".capitalized
         },
         {
-            return "\(ShipNameAdjective()) \(OceanShipNameObject())".capitalized
+            let thing: CustomStringConvertible = Bool.random(probability: 85) ? OceanShipNameObject() : PrimitiveWeapon()
+            return "\(ShipNameAdjective()) \(thing)".capitalized
         },
         {
-            return "\(TimeOfDay()) \(MartialSocialConcept())".capitalized
+            let thing: CustomStringConvertible = Bool.random(probability: 75) ? MartialSocialConcept() : PrimitiveWeapon()
+            return "\(TimeOfDay()) \(thing)".capitalized
         },
         {
-            let oceanShipNameObject = OceanShipNameObject().description.firstUppercased
-            return "\(TownName()) \(oceanShipNameObject)"
+            let thing: CustomStringConvertible = Bool.random(probability: 85) ? OceanShipNameObject() : PrimitiveWeapon()
+            return "\(TownName()) \(thing)".capitalized
         },
         {
-            let oceanShipNameObject = OceanShipNameObject().description.firstUppercased
-            let martialSocialConcept = MartialSocialConcept().description.firstUppercased
-            return "\(oceanShipNameObject) of \(martialSocialConcept)"
+            let thing = Bool.random() ?
+                OceanShipNameObject().description.firstUppercased :
+                PrimitiveWeapon().description.firstUppercased
+            let concept = Bool.random() ? MartialSocialConcept().description.firstUppercased : TownName().description
+            return "\(thing) of \(concept)"
         },
         {
-            let femaleName = CommonPersonGivenName(gender: .female).description
-            let possessiveFemaleName: String
-            if femaleName.last == "s" {
-                possessiveFemaleName = "\(femaleName)'"
-            } else {
-                possessiveFemaleName = "\(femaleName)'s"
+            let possessiveOwner: String
+            switch Int.random(in: 0...2) {
+            case 0:
+                let martialSocialConcept = MartialSocialConcept().description.firstUppercased
+                let possessiveMartialSocialConcept: String
+                if martialSocialConcept.last == "s" {
+                    possessiveMartialSocialConcept = "\(martialSocialConcept)'"
+                } else {
+                    possessiveMartialSocialConcept = "\(martialSocialConcept)'s"
+                }
+                possessiveOwner = possessiveMartialSocialConcept
+                
+            default:
+                let gender: Gender = Bool.random(probability: 75) ? .female : .male
+                let personName = CommonPersonGivenName(gender: gender).description
+                let possessivePersonName: String
+                if personName.last == "s" {
+                    possessivePersonName = "\(personName)'"
+                } else {
+                    possessivePersonName = "\(personName)'s"
+                }
+                possessiveOwner = possessivePersonName
             }
-            let martialSocialConcept = MartialSocialConcept().description.firstUppercased
-            return "\(possessiveFemaleName) \(martialSocialConcept)"
+            
+            let thing = Bool.random() ?
+                OceanShipNameObject().description.firstUppercased :
+                PrimitiveWeapon().description.firstUppercased
+
+            return "\(possessiveOwner) \(thing)"
         },
-        {
-            let femaleName = CommonPersonGivenName(gender: .female).description
-            let possessiveFemaleName: String
-            if femaleName.last == "s" {
-                possessiveFemaleName = "\(femaleName)'"
-            } else {
-                possessiveFemaleName = "\(femaleName)'s"
-            }
-            let oceanShipNameObject = OceanShipNameObject().description.firstUppercased
-            return "\(possessiveFemaleName) \(oceanShipNameObject)"
-        },
-        {
+    {
+        let possessiveOwner: String
+        switch Int.random(in: 0...2) {
+        case 0:
             let martialSocialConcept = MartialSocialConcept().description.firstUppercased
             let possessiveMartialSocialConcept: String
             if martialSocialConcept.last == "s" {
@@ -87,9 +105,23 @@ public struct OceanShipName: Hashable {
             } else {
                 possessiveMartialSocialConcept = "\(martialSocialConcept)'s"
             }
-            let oceanShipNameObject = OceanShipNameObject().description.firstUppercased
-            return "\(possessiveMartialSocialConcept) \(oceanShipNameObject)"
-        },
+            possessiveOwner = possessiveMartialSocialConcept
+            
+        default:
+            let gender: Gender = Bool.random(probability: 75) ? .female : .male
+            let personName = CommonPersonGivenName(gender: gender).description
+            let possessivePersonName: String
+            if personName.last == "s" {
+                possessivePersonName = "\(personName)'"
+            } else {
+                possessivePersonName = "\(personName)'s"
+            }
+            possessiveOwner = possessivePersonName
+        }
+        
+        let martialSocialConcept = MartialSocialConcept().description.firstUppercased
+        return "\(possessiveOwner) \(martialSocialConcept)"
+    },
     ]
     
     private let value: String
