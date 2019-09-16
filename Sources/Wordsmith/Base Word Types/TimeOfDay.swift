@@ -9,7 +9,6 @@ public struct TimeOfDay {
         "dawn",
         "sunrise",
         "daytime",
-        "noon",
         "midday",
         "afternoon",
         "evening",
