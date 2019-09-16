@@ -1760,9 +1760,9 @@ public struct CommonPersonGivenName: Hashable {
         "Mavis",
         "Maxine",
         "Maya",
-        "Mckenna",
-        "Mckenzie",
-        "Mckinley",
+        "McKenna",
+        "McKenzie",
+        "McKinley",
         "Meadow",
         "Meagan",
         "Megan",
@@ -2046,6 +2046,10 @@ public struct CommonPersonGivenName: Hashable {
     
     public let gender: Gender
     private let value: String
+    
+    public init() {
+        self.init(gender: Bool.random() ? .male : .female)
+    }
     
     public init(gender: Gender) {
         self.gender = gender
