@@ -42,6 +42,6 @@ public struct WeirdName: Hashable {
 
 extension WeirdName: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }

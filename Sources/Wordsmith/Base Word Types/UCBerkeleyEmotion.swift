@@ -44,7 +44,7 @@ public struct UCBerkeleyEmotion {
 
 extension UCBerkeleyEmotion: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }
 

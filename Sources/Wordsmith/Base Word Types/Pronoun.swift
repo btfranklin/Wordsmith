@@ -37,6 +37,6 @@ public struct Pronoun {
 
 extension Pronoun: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }

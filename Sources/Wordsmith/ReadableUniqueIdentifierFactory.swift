@@ -6,10 +6,10 @@ public class ReadableUniqueIdentifierFactory {
     
     private let formatters: [(Int) -> String] = [
         {
-            return "\(Adjective())_\(Noun())_\($0)"
+            "\(Adjective())_\(Noun())_\($0)"
         },
         {
-            return "\(Adverb())_\(Verb(tense:"present perfect"))_\($0)"
+            "\(Adverb())_\(Verb(tense:.presentPerfect))_\($0)"
         }
     ]
     

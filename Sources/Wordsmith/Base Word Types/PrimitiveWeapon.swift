@@ -28,6 +28,6 @@ public struct PrimitiveWeapon {
 
 extension PrimitiveWeapon: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }

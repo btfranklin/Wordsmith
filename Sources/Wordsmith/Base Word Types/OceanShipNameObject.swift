@@ -71,6 +71,6 @@ public struct OceanShipNameObject {
 
 extension OceanShipNameObject: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }

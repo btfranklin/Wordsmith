@@ -6,13 +6,13 @@ public struct ComplexWorkTitle: Hashable {
     
     private static let formatters: [() -> String] = [
         {
-            return "\(Noun()) \(Adverb()) \(Verb(tense:"present"))".capitalized
+            "\(Noun()) \(Adverb()) \(Verb(tense:.present))".capitalized
         },
         {
             let opener = ["When", "Where", "Why", "As"].randomElement()!
             let noun = Noun().description.firstUppercased
             let vowelNoun = noun.startsWithVowel
-            let verb = Verb(tense:"present").description.firstUppercased
+            let verb = Verb(tense:.present).description.firstUppercased
             return "\(opener) \(Determiner(forVowel: vowelNoun)) \(noun) \(verb)"
         },
         {
@@ -23,14 +23,14 @@ public struct ComplexWorkTitle: Hashable {
             let presentTense = Bool.random()
             if presentTense {
                 if !pronoun.isSingular {
-                    verb = Verb(tense:"base").description.firstUppercased
+                    verb = Verb(tense:.base).description.firstUppercased
                 } else if pronoun.isThirdPerson {
-                    verb = Verb(tense:"present").description.firstUppercased
+                    verb = Verb(tense:.present).description.firstUppercased
                 } else {
-                    verb = Verb(tense:"base").description.firstUppercased
+                    verb = Verb(tense:.base).description.firstUppercased
                 }
             } else {
-                verb = Verb(tense:"past").description.firstUppercased
+                verb = Verb(tense:.past).description.firstUppercased
             }
             
             let elipsisPrefix = Bool.random(probability: 20) ? "..." : ""
@@ -43,17 +43,17 @@ public struct ComplexWorkTitle: Hashable {
             var result: String
             switch Int.random(in: 0...3) {
             case 1:
-                result = "\(Determiner(forVowel: vowelNoun)) \(noun) \(Verb(tense: "present"))"
+                result = "\(Determiner(forVowel: vowelNoun)) \(noun) \(Verb(tense:.present))"
 
             case 2:
                 let connector = ["Will", "Shall", "Can", "Must", "May"].randomElement()!
                 result = "\(Determiner(forVowel: vowelNoun)) \(noun) \(connector) \(Verb())"
 
             case 3:
-                result = "\(Determiner(forVowel: vowelNoun)) \(noun) Is \(Verb(tense: "present perfect"))"
+                result = "\(Determiner(forVowel: vowelNoun)) \(noun) Is \(Verb(tense:.presentPerfect))"
 
             default:
-                result = "\(Determiner(forVowel: vowelNoun)) \(noun) Has \(Verb(tense:"past participle"))"
+                result = "\(Determiner(forVowel: vowelNoun)) \(noun) Has \(Verb(tense:.presentPerfect))"
             }
             
             return result.capitalized
@@ -106,7 +106,7 @@ public struct ComplexWorkTitle: Hashable {
                 }
             default:
                 for _ in 1...wordCount {
-                    words.append(Verb(tense:"base").description.firstUppercased)
+                    words.append(Verb().description.firstUppercased)
                 }
             }
             
@@ -178,6 +178,6 @@ public struct ComplexWorkTitle: Hashable {
 
 extension ComplexWorkTitle: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }

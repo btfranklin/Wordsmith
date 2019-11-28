@@ -469,6 +469,6 @@ public struct Adjective {
 
 extension Adjective: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }

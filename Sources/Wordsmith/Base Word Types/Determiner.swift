@@ -38,7 +38,7 @@ public struct Determiner {
 
 extension Determiner: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }
 

@@ -56,6 +56,6 @@ public struct MartialSocialConcept {
 
 extension MartialSocialConcept: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }

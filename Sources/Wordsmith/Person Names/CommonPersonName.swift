@@ -21,7 +21,7 @@ public struct CommonPersonName: PersonName {
 
 extension CommonPersonName: CustomStringConvertible {
     public var description: String {
-        return "\(givenName) \(surname)"
+        "\(givenName) \(surname)"
     }
 }
 

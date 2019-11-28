@@ -63,7 +63,7 @@ public struct LocationAdjective {
 
 extension LocationAdjective: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }
 

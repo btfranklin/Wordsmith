@@ -332,7 +332,7 @@ public struct Adverb {
 
 extension Adverb: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }
 

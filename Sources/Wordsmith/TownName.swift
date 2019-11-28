@@ -65,7 +65,7 @@ public struct TownName: Hashable {
 
 extension TownName: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }
 

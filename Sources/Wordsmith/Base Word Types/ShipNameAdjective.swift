@@ -59,6 +59,6 @@ public struct ShipNameAdjective {
 
 extension ShipNameAdjective: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }

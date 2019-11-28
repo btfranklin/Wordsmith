@@ -11,6 +11,6 @@ public struct WorkTitle: Hashable {
 
 extension WorkTitle: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }

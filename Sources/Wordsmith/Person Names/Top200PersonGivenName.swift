@@ -428,6 +428,6 @@ public struct Top200PersonGivenName: Hashable {
 
 extension Top200PersonGivenName: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }

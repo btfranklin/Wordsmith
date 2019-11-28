@@ -2066,7 +2066,7 @@ public struct CommonPersonGivenName: Hashable {
 
 extension CommonPersonGivenName: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }
 

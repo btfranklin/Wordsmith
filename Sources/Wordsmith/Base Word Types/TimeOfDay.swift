@@ -27,6 +27,6 @@ public struct TimeOfDay {
 
 extension TimeOfDay: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }

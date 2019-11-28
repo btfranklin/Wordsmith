@@ -7,13 +7,13 @@ public struct SimpleWorkTitle: Hashable {
     
     private static let formatters: [() -> String] = [
         {
-            return Noun().description.firstUppercased
+            Noun().description.firstUppercased
         },
         {
-            return Noun().description.firstUppercased
+            Noun().description.firstUppercased
         },
         {
-            return Noun().description.firstUppercased
+            Noun().description.firstUppercased
         },
         {
             let noun = Noun()
@@ -21,40 +21,40 @@ public struct SimpleWorkTitle: Hashable {
             return "\(Determiner(forVowel: vowelNoun)) \(noun)".capitalized
         },
         {
-            return Adjective().description.firstUppercased
+            Adjective().description.firstUppercased
         },
         {
-            return Adjective().description.firstUppercased
+            Adjective().description.firstUppercased
         },
         {
-            return Adjective().description.firstUppercased
+            Adjective().description.firstUppercased
         },
         {
-            return Adverb().description.firstUppercased
+            Adverb().description.firstUppercased
         },
         {
-            return Verb(tense:"present perfect").description.firstUppercased
+            Verb(tense:.presentPerfect).description.firstUppercased
         },
         {
-            return "\(Verb(tense:"present perfect")) \(Noun())".capitalized
+            "\(Verb(tense:.presentPerfect)) \(Noun())".capitalized
         },
         {
-            return "\(Noun())-\(Verb(tense:"present perfect"))".capitalized
+            "\(Noun())-\(Verb(tense:.presentPerfect))".capitalized
         },
         {
-            return "\(TimeOfDay()) \(Verb(tense:"present"))".capitalized
+            "\(TimeOfDay()) \(Verb(tense:.present))".capitalized
         },
         {
-            return "\(TimeOfDay()) \(Noun())".capitalized
+            "\(TimeOfDay()) \(Noun())".capitalized
         },
         {
-            return "\(Adjective()) \(Noun())".capitalized
+            "\(Adjective()) \(Noun())".capitalized
         },
         {
-            return "\(Adjective()) \(Noun())".capitalized
+            "\(Adjective()) \(Noun())".capitalized
         },
         {
-            return "The \(Adjective()) \(Noun())".capitalized
+            "The \(Adjective()) \(Noun())".capitalized
         },
         {
             let thing = Bool.random() ?
@@ -69,7 +69,7 @@ public struct SimpleWorkTitle: Hashable {
             return "The \(thing)\(prepositionalPhrase ?? "")"
         },
         {
-            return "\(Adjective()) \(Verb(tense:"present perfect"))".capitalized
+            "\(Adjective()) \(Verb(tense:.presentPerfect))".capitalized
         },
         {
             let adjective = Adjective()
@@ -77,10 +77,10 @@ public struct SimpleWorkTitle: Hashable {
             return "\(Determiner(forVowel: vowelAdjective)) \(adjective) \(Noun())".capitalized
         },
         {
-            return "\(CommonPersonName())"
+            CommonPersonName().description
         },
         {
-            return "\(TownName())"
+            TownName().description
         },
     ]
     
@@ -94,6 +94,6 @@ public struct SimpleWorkTitle: Hashable {
 
 extension SimpleWorkTitle: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }

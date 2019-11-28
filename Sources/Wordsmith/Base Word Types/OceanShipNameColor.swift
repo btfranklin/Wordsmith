@@ -31,6 +31,6 @@ public struct OceanShipNameColor {
 
 extension OceanShipNameColor: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }

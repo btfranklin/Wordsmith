@@ -4523,6 +4523,6 @@ public struct Noun {
 
 extension Noun: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }

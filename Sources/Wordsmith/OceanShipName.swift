@@ -7,38 +7,38 @@ public struct OceanShipName: Hashable {
     
     private static let formatters: [() -> String] = [
         {
-            return CommonPersonGivenName(gender: .female).description
+            CommonPersonGivenName(gender: .female).description
         },
         {
-            return CommonPersonGivenName(gender: .female).description
+            CommonPersonGivenName(gender: .female).description
         },
         {
-            return CommonPersonGivenName(gender: .female).description
+            CommonPersonGivenName(gender: .female).description
         },
         {
-            return CommonPersonGivenName(gender: .female).description
+            CommonPersonGivenName(gender: .female).description
         },
         {
-            return MartialSocialConcept().description.firstUppercased
+            MartialSocialConcept().description.firstUppercased
         },
         {
-            return MartialSocialConcept().description.firstUppercased
+            MartialSocialConcept().description.firstUppercased
         },
         {
-            return TownName().description
+            TownName().description
         },
         {
-            return WeirdName(syllableCount: 3).description
+            WeirdName(syllableCount: 3).description
         },
         {
-            return OceanShipNameObject().description.firstUppercased
+            OceanShipNameObject().description.firstUppercased
         },
         {
             let thing: CustomStringConvertible = Bool.random(probability: 75) ? OceanShipNameObject() : PrimitiveWeapon()
             return "\(OceanShipNameColor()) \(thing)".capitalized
         },
         {
-            return ShipNameAdjective().description.firstUppercased
+            ShipNameAdjective().description.firstUppercased
         },
         {
             let thing: CustomStringConvertible = Bool.random(probability: 85) ? OceanShipNameObject() : PrimitiveWeapon()
@@ -134,6 +134,6 @@ public struct OceanShipName: Hashable {
 
 extension OceanShipName: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }

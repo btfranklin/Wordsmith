@@ -2,9 +2,13 @@ import Foundation
 
 public struct Verb {
     
-    static let tenses: [String] = [
-        "base","past","past participle","present","present perfect"
-    ]
+    public enum Tense: Int {
+        case base
+        case past
+        case pastParticiple
+        case present
+        case presentPerfect
+    }
     
     static let options: [[String]] = [
         ["abash","abashed","abashed","abashes","abashing"],
@@ -1010,11 +1014,8 @@ public struct Verb {
     
     private let value: String
     
-    public init(tense: String = "base") {
-        guard let tenseIndex = Verb.tenses.firstIndex(of: tense) else {
-            fatalError("Verb data does not contain a tense called \(tense)")
-        }
-        
+    public init(tense: Tense = .base) {
+        let tenseIndex = tense.rawValue
         let verbRow = Verb.options.randomElement()!
         value = verbRow[tenseIndex]
     }
@@ -1023,7 +1024,7 @@ public struct Verb {
 
 extension Verb: CustomStringConvertible {
     public var description: String {
-        return value
+        value
     }
 }
 
