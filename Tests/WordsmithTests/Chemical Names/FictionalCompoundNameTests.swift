@@ -13,7 +13,7 @@ class FictionalCompoundNameTests: XCTestCase {
         }
     }
     
-    func testInitializerWithStringParameters() {
+    func testInitializerWithElementNameStringParameters() {
         for _ in 1...100 {
             let component1 = FictionalElementName().description
             let component2 = FictionalElementName().description
@@ -33,4 +33,13 @@ class FictionalCompoundNameTests: XCTestCase {
         }
     }
 
+    func testInitializerWithArbitraryStringParameters() {
+        for _ in 1...100 {
+            let component1 = Verb(tense:.present)
+            let component2 = Adjective()
+            let fictionalCompoundName = FictionalCompoundName(components: [component1, component2])
+            XCTAssertNotNil(fictionalCompoundName.description)
+            print("\(component1) + \(component2) -> \(fictionalCompoundName)")
+        }
+    }
 }
