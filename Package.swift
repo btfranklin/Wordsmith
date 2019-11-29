@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "Wordsmith",
     platforms: [
-        .macOS(.v10_14), .iOS(.v12),
+        .macOS(.v10_15), .iOS(.v13),
     ],
     products: [
         .library(
@@ -14,7 +14,7 @@ let package = Package(
             targets: ["Wordsmith"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/dunesailer/Utilities.git", from: "0.5.0"),
+        .package(url: "https://github.com/dunesailer/Utilities.git", from: "0.6.0"),
     ],
     targets: [
         .target(
