@@ -364,7 +364,7 @@ public struct Noun {
         "bicycle",
         "bid",
         "bidet",
-        "bifocals",
+        "bifocal",
         "big",
         "big-rig",
         "bijou",
@@ -406,7 +406,6 @@ public struct Noun {
         "blood",
         "bloodflow",
         "bloom",
-        "bloomers",
         "blossom",
         "blouse",
         "blow",
@@ -442,7 +441,6 @@ public struct Noun {
         "boot",
         "bootee",
         "bootie",
-        "boots",
         "booty",
         "border",
         "bore",
@@ -646,7 +644,6 @@ public struct Noun {
         "cassock",
         "cast",
         "castanet",
-        "castanets",
         "castle",
         "cat",
         "catacomb",
@@ -728,7 +725,6 @@ public struct Noun {
         "chemical",
         "chemistry",
         "cheque",
-        "cherries",
         "cherry",
         "chess",
         "chest",
@@ -805,12 +801,11 @@ public struct Noun {
         "cloakroom",
         "clock",
         "clockwork",
-        "clogs",
+        "clog",
         "cloister",
         "close",
         "closet",
         "cloth",
-        "clothes",
         "clothing",
         "cloud",
         "cloudburst",
@@ -1077,7 +1072,6 @@ public struct Noun {
         "cutlet",
         "cutover",
         "cutting",
-        "cyclamen",
         "cycle",
         "cyclone",
         "cylinder",
@@ -1486,7 +1480,6 @@ public struct Noun {
         "fahrenheit",
         "fail",
         "failure",
-        "fairies",
         "fairy",
         "faith",
         "fall",
@@ -1569,7 +1562,6 @@ public struct Noun {
         "fishing",
         "fishmonger",
         "fishnet",
-        "fisting",
         "fix",
         "fixture",
         "flag",
@@ -1866,6 +1858,7 @@ public struct Noun {
         "handmaiden",
         "handsaw",
         "hang",
+        "happening",
         "happiness",
         "harbor",
         "harbour",
@@ -2128,7 +2121,7 @@ public struct Noun {
         "jasmine",
         "jaw",
         "jealousy",
-        "jeans",
+        "jean",
         "jeep",
         "jeff",
         "jelly",
@@ -2290,9 +2283,9 @@ public struct Noun {
         "level",
         "lever",
         "leverage",
+        "liar",
         "license",
         "lie",
-        "lier",
         "life",
         "lift",
         "light",
@@ -2472,7 +2465,6 @@ public struct Noun {
         "member",
         "membership",
         "memory",
-        "men",
         "menorah",
         "mention",
         "menu",
@@ -2542,7 +2534,7 @@ public struct Noun {
         "mixture",
         "moat",
         "mobile",
-        "moccasins",
+        "moccasin",
         "mocha",
         "mode",
         "model",
@@ -2781,7 +2773,6 @@ public struct Noun {
         "owl",
         "owner",
         "ox",
-        "oxen",
         "oxford",
         "oxygen",
         "oyster",
@@ -2817,7 +2808,7 @@ public struct Noun {
         "pantologist",
         "pantology",
         "pantry",
-        "pants",
+        "pant",
         "pantsuit",
         "panty",
         "pantyhose",
@@ -3025,7 +3016,6 @@ public struct Noun {
         "poisoning",
         "pole",
         "polenta",
-        "police",
         "policeman",
         "policy",
         "polish",
@@ -3583,7 +3573,6 @@ public struct Noun {
         "shopping",
         "shore",
         "shortage",
-        "shorts",
         "shortwave",
         "shot",
         "shoulder",
@@ -3598,7 +3587,7 @@ public struct Noun {
         "sick",
         "side",
         "sideboard",
-        "sideburns",
+        "sideburn",
         "sidecar",
         "sidestream",
         "sidewalk",
@@ -3617,7 +3606,6 @@ public struct Noun {
         "silo",
         "silver",
         "simple",
-        "sing",
         "singer",
         "single",
         "sink",
@@ -3664,20 +3652,18 @@ public struct Noun {
         "smock",
         "smog",
         "smoke",
-        "smoking",
-        "smuggling",
         "snail",
         "snake",
         "snakebite",
         "sneaker",
         "sneeze",
         "snob",
-        "snorer",
+        "snore",
         "snow",
-        "snowboarding",
+        "snowboard",
         "snowflake",
         "snowman",
-        "snowmobiling",
+        "snowmobile",
         "snowplow",
         "snowstorm",
         "snowsuit",
@@ -3687,7 +3673,6 @@ public struct Noun {
         "society",
         "sociology",
         "sock",
-        "socks",
         "soda",
         "sofa",
         "soft",
@@ -3780,7 +3765,6 @@ public struct Noun {
         "squirrel",
         "stable",
         "stack",
-        "stacking",
         "stadium",
         "staff",
         "stag",
@@ -3825,7 +3809,6 @@ public struct Noun {
         "stepmother",
         "step-mother",
         "stepping-stone",
-        "steps",
         "step-sister",
         "stepson",
         "step-son",
@@ -3838,7 +3821,6 @@ public struct Noun {
         "stitch",
         "stock",
         "stocking",
-        "stockings",
         "stock-in-trade",
         "stole",
         "stomach",
@@ -3912,7 +3894,6 @@ public struct Noun {
         "sunday",
         "sundial",
         "sunflower",
-        "sunglasses",
         "sunlamp",
         "sunroom",
         "sunshine",
@@ -3931,7 +3912,7 @@ public struct Noun {
         "survey",
         "sushi",
         "suspect",
-        "suspenders",
+        "suspender",
         "sustainment",
         "SUV",
         "swallow",
@@ -3944,7 +3925,6 @@ public struct Noun {
         "sweatshop",
         "sweatsuit",
         "sweet",
-        "sweets",
         "swell",
         "swim",
         "swimming",
@@ -4045,7 +4025,7 @@ public struct Noun {
         "theme",
         "theory",
         "therapist",
-        "thermals",
+        "thermal",
         "thermometer",
         "thigh",
         "thing",
@@ -4070,8 +4050,6 @@ public struct Noun {
         "ticket",
         "tie",
         "tiger",
-        "tight",
-        "tights",
         "tile",
         "till",
         "timbale",
@@ -4368,7 +4346,7 @@ public struct Noun {
         "water",
         "waterbed",
         "waterfall",
-        "waterskiing",
+        "waterski",
         "waterspout",
         "wave",
         "wax",
@@ -4401,15 +4379,12 @@ public struct Noun {
         "wharf",
         "wheat",
         "wheel",
-        "whereas",
-        "while",
         "whip",
         "whirlpool",
         "whirlwind",
         "whisker",
         "whiskey",
         "whistle",
-        "white",
         "whole",
         "wholesale",
         "wholesaler",
@@ -4451,13 +4426,11 @@ public struct Noun {
         "woodshed",
         "woodwind",
         "wool",
-        "woolen",
         "word",
         "work",
         "workbench",
         "worker",
         "workhorse",
-        "working",
         "worklife",
         "workshop",
         "world",
@@ -4476,6 +4449,7 @@ public struct Noun {
         "writer",
         "writing",
         "wrong",
+        "xenon",
         "xylophone",
         "yacht",
         "yak",
@@ -4513,10 +4487,46 @@ public struct Noun {
         "zucchini",
     ]
     
+    
+    
     private let value: String
     
-    public init() {
-        value = Noun.options.randomElement()!
+    public init(plural: Bool = false) {
+        var noun = Noun.options.randomElement()!
+        
+        if plural {
+            if noun.hasSuffix("ay") || noun.hasSuffix("ey") || noun.hasSuffix("iy") || noun.hasSuffix("oy") || noun.hasSuffix("uy") {
+                noun = noun + "s"
+                
+            } else if noun.last! == "y" {
+                noun = noun.dropLast().description
+                noun = noun + "ies"
+                
+            } else if noun.last! == "x" || noun.hasSuffix("ss") || noun.hasSuffix("sh") || noun.hasSuffix("ch") {
+                noun = noun + "es"
+                
+            } else if noun.hasSuffix("ife") {
+                noun = noun.dropLast(2).description
+                noun = noun + "ves"
+                
+            } else if noun.hasSuffix("rf") {
+                noun = noun.dropLast().description
+                noun = noun + "ves"
+                
+            } else if noun.hasSuffix("man") {
+                if noun == "human" {
+                    noun = "humans"
+                } else {
+                    noun = noun.dropLast(2).description
+                    noun = noun + "en"
+                }
+                
+            } else if noun.last! != "s" {
+                noun = noun + "s"
+            }
+        }
+        
+        value = noun
     }
     
 }
