@@ -2044,14 +2044,14 @@ public struct CommonPersonGivenName: Hashable {
         "Zuri",
     ]
     
-    public let gender: Gender
+    public let gender: BinaryGender
     private let value: String
     
     public init() {
         self.init(gender: Bool.random() ? .male : .female)
     }
     
-    public init(gender: Gender) {
+    public init(gender: BinaryGender) {
         self.gender = gender
         
         switch gender {

@@ -77,7 +77,7 @@ public struct OceanShipName: Hashable {
                 possessiveOwner = possessiveMartialSocialConcept
                 
             default:
-                let gender: Gender = Bool.random(probability: 75) ? .female : .male
+                let gender: BinaryGender = Bool.random(probability: 75) ? .female : .male
                 let personName = CommonPersonGivenName(gender: gender).description
                 let possessivePersonName: String
                 if personName.last == "s" {
@@ -108,7 +108,7 @@ public struct OceanShipName: Hashable {
             possessiveOwner = possessiveMartialSocialConcept
             
         default:
-            let gender: Gender = Bool.random(probability: 75) ? .female : .male
+            let gender: BinaryGender = Bool.random(probability: 75) ? .female : .male
             let personName = CommonPersonGivenName(gender: gender).description
             let possessivePersonName: String
             if personName.last == "s" {

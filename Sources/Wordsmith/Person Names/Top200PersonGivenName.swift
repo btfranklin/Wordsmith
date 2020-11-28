@@ -411,10 +411,10 @@ public struct Top200PersonGivenName: Hashable {
         "Mia",
     ]
 
-    public let gender: Gender
+    public let gender: BinaryGender
     private let value: String
 
-    public init(gender: Gender) {
+    public init(gender: BinaryGender) {
         self.gender = gender
         
         switch gender {

@@ -12,7 +12,7 @@ public struct CommonPersonName: PersonName {
         self.init(gender: Bool.random() ? .male : .female)
     }
 
-    public init(gender: Gender) {
+    public init(gender: BinaryGender) {
         givenName = CommonPersonGivenName(gender: gender).description
         surname = CommonPersonSurname().description
     }
