@@ -14,7 +14,7 @@ let package = Package(
             targets: ["Wordsmith"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/dunesailer/Utilities.git", from: "0.7.0"),
+        .package(url: "https://github.com/dunesailer/Utilities.git", from: "0.8.0"),
     ],
     targets: [
         .target(
