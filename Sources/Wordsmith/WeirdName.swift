@@ -34,6 +34,8 @@ public struct WeirdName: Hashable {
         if Bool.random() {
             str += WeirdName.endingSounds.randomElement()!
         }
+
+        // TODO Add support for connecting characters, such as apostrophes and hyphens
         
         value = str.firstUppercased
     }

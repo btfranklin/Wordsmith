@@ -5,14 +5,6 @@ import XCTest
 
 class FictionalElementNameTests: XCTestCase {
     
-    func testInitializer() {
-        for _ in 1...100 {
-            let fictionalElementName = FictionalElementName()
-            XCTAssertNotNil(fictionalElementName.description)
-            print(fictionalElementName)
-        }
-    }
-    
     func testUniqueness() {
         var generatedValues = Set<FictionalElementName>()
         var consecutiveRetries = 0

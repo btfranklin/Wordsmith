@@ -5,21 +5,6 @@ import XCTest
 
 class CommonPersonGivenNameTests: XCTestCase {
     
-    func testInitializer() {
-                
-        for _ in 1...100 {
-            let name = CommonPersonGivenName(gender: .male)
-            XCTAssertNotNil(name.description)
-            print("Male: \(name)")
-        }
-        
-        for _ in 1...100 {
-            let name = CommonPersonGivenName(gender: .female)
-            XCTAssertNotNil(name.description)
-            print("Female: \(name)")
-        }
-    }
-    
     func testUniqueness() {
         var generatedValues = Set<CommonPersonGivenName>()
         var consecutiveRetries = 0

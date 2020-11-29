@@ -5,14 +5,6 @@ import XCTest
 
 class ComplexWorkTitleTests: XCTestCase {
     
-    func testInitializer() {
-        for _ in 1...100 {
-            let title = ComplexWorkTitle()
-            XCTAssertNotNil(title.description)
-            print(title)
-        }
-    }
-    
     func testUniqueness() {
         var generatedValues = Set<ComplexWorkTitle>()
         var consecutiveRetries = 0

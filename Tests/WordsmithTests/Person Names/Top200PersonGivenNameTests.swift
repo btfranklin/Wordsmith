@@ -5,21 +5,6 @@ import XCTest
 
 class Top200PersonGivenNameTests: XCTestCase {
     
-    func testInitializer() {
-                
-        for _ in 1...100 {
-            let name = Top200PersonGivenName(gender: .male)
-            XCTAssertNotNil(name.description)
-            print("Male: \(name)")
-        }
-        
-        for _ in 1...100 {
-            let name = Top200PersonGivenName(gender: .female)
-            XCTAssertNotNil(name.description)
-            print("Female: \(name)")
-        }
-    }
-    
     func testUniqueness() {
         var generatedValues = Set<Top200PersonGivenName>()
         var consecutiveRetries = 0

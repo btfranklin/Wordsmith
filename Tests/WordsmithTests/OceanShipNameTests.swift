@@ -5,14 +5,6 @@ import XCTest
 
 class OceanShipNameTests: XCTestCase {
     
-    func testInitializer() {
-        for _ in 1...100 {
-            let oceanShipName = OceanShipName()
-            XCTAssertNotNil(oceanShipName.description)
-            print(oceanShipName)
-        }
-    }
-    
     func testUniqueness() {
         var generatedValues = Set<OceanShipName>()
         var consecutiveRetries = 0

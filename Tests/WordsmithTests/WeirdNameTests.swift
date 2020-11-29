@@ -5,14 +5,6 @@ import XCTest
 
 class WeirdNameTests: XCTestCase {
     
-    func testInitializer() {
-        for _ in 1...100 {
-            let name = WeirdName(syllableCount: 2)
-            XCTAssertNotNil(name.description)
-            print(name)
-        }
-    }
-
     func testUniqueness() {
         var generatedValues = Set<WeirdName>()
         var consecutiveRetries = 0

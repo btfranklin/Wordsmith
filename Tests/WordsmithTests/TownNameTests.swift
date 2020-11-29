@@ -5,14 +5,6 @@ import XCTest
 
 class TownNameTests: XCTestCase {
     
-    func testInitializer() {
-        for _ in 1...100 {
-            let name = TownName()
-            XCTAssertNotNil(name.description)
-            print(name)
-        }
-    }
-    
     func testUniqueness() {
         var generatedValues = Set<TownName>()
         var consecutiveRetries = 0

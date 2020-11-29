@@ -5,14 +5,6 @@ import XCTest
 
 class BandNameTests: XCTestCase {
     
-    func testInitializer() {
-        for _ in 1...100 {
-            let bandName = BandName()
-            XCTAssertNotNil(bandName.description)
-            print(bandName)
-        }
-    }
-    
     func testUniqueness() {
         var generatedValues = Set<BandName>()
         var consecutiveRetries = 0
