@@ -16,6 +16,7 @@ public struct PrimitiveWeapon {
         "lance",
         "pike",
         "bow",
+        "crossbow"
     ]
     
     private let value: String
