@@ -3,7 +3,7 @@
 import Foundation
 
 public struct WeirdName: Hashable {
-    
+
     static let openEndedSyllables = [
         "a", "ba", "be", "bi", "bo", "bu", "by", "ca", "cha", "che", "chi", "co", "cho", "chu", "chy", "da", "de", "di", "do", "du", "dy",
         "e", "fa", "fe", "fi", "fo", "fu", "fy", "ga", "ge", "gi", "go", "gu", "gy", "ha", "he", "hi", "ho", "hu", "hy",
@@ -20,23 +20,33 @@ public struct WeirdName: Hashable {
     
     private let value: String
     
-    public init(syllableCount: Int) {
+    public init(syllableCount: Int,
+                allowHyphen: Bool = true,
+                allowApostrophe: Bool = true) {
         
         guard syllableCount >= 1 else {
             fatalError("Syllable count must be greater than 0")
         }
-        
+
+        let willUseHyphen = syllableCount > 2 && allowHyphen && Bool.random()
+        let willUseApostrophe = syllableCount > 2 && allowApostrophe && Bool.random()
+        let hyphenSyllable = willUseHyphen ? Int.random(in: 1..<syllableCount) : 0
+        let apostropheSyllable = willUseApostrophe ? Int.random(in: 1..<syllableCount) : 0
         var str = ""
-        for _ in 1...syllableCount {
+        for currentSyllable in 1...syllableCount {
             str += WeirdName.openEndedSyllables.randomElement()!
+
+            if currentSyllable == apostropheSyllable {
+                str += "'"
+            } else if currentSyllable == hyphenSyllable {
+                str += "-"
+            }
         }
         
         if Bool.random() {
             str += WeirdName.endingSounds.randomElement()!
         }
 
-        // TODO Add support for connecting characters, such as apostrophes and hyphens
-        
         value = str.firstUppercased
     }
     

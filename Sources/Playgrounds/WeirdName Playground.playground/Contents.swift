@@ -12,6 +12,12 @@ for _ in 1...10 {
     print(name)
 }
 
+print("--- Three-syllable names, disallowing hyphens and apostrophes ---")
+for _ in 1...10 {
+    let name = WeirdName(syllableCount: 3, allowHyphen: false, allowApostrophe: false)
+    print(name)
+}
+
 print("--- Six-syllable names ---")
 for _ in 1...10 {
     let name = WeirdName(syllableCount: 6)
