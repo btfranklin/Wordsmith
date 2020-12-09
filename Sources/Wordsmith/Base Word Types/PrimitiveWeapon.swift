@@ -21,8 +21,19 @@ public struct PrimitiveWeapon {
     
     private let value: String
     
-    public init() {
-        value = PrimitiveWeapon.options.randomElement()!
+    public init(plural: Bool = false) {
+        var primitiveWeapon = PrimitiveWeapon.options.randomElement()!
+
+        if plural {
+            if primitiveWeapon.hasSuffix("ife") {
+                primitiveWeapon = primitiveWeapon.dropLast(2).description
+                primitiveWeapon += "ves"
+            } else {
+                primitiveWeapon += "s"
+            }
+        }
+
+        value = primitiveWeapon
     }
     
 }

@@ -450,7 +450,6 @@ public struct Adjective {
         "wonderful",
         "wooden",
         "worried",
-        "x-ray",
         "yellow",
         "young",
         "yummy",
