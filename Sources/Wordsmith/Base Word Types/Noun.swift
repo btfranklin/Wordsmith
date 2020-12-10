@@ -154,6 +154,7 @@ public struct Noun {
         "apron",
         "apse",
         "aquifer",
+        "arachnid",
         "arch",
         "archaeology",
         "archeology",
