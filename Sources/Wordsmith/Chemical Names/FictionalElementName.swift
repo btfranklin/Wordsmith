@@ -27,7 +27,7 @@ public struct FictionalElementName: Hashable {
         let rootWordLastLetter = rootWord.last!
 
         switch rootWordLastLetter {
-        case "a","o", "u":
+        case "a","o","u":
             value = Bool.random() ? "\(rootWord)gen" : "\(rootWord)n"
         case "e":
             value = Bool.random() ? "\(rootWord.dropLast(1))ium" : "\(rootWord)on"
