@@ -9,7 +9,7 @@ class WeirdNameTests: XCTestCase {
         var generatedValues = Set<WeirdName>()
         var consecutiveRetries = 0
         
-        while consecutiveRetries < 1000 {
+        while consecutiveRetries < 500 {
             let value = WeirdName(syllableCount: 2)
             
             if generatedValues.contains(value) {

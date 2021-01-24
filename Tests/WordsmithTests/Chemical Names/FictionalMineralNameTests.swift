@@ -9,7 +9,7 @@ class FictionalMineralNameTests: XCTestCase {
         var generatedValues = Set<FictionalMineralName>()
         var consecutiveRetries = 0
 
-        while consecutiveRetries < 100 {
+        while consecutiveRetries < 25 {
             let value = FictionalMineralName()
 
             if generatedValues.contains(value) {

@@ -9,7 +9,7 @@ class FictionalElementNameTests: XCTestCase {
         var generatedValues = Set<FictionalElementName>()
         var consecutiveRetries = 0
         
-        while consecutiveRetries < 100 {
+        while consecutiveRetries < 25 {
             let value = FictionalElementName()
             
             if generatedValues.contains(value) {

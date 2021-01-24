@@ -9,7 +9,7 @@ class CommonPersonNameTests: XCTestCase {
         var generatedValues = Set<CommonPersonName>()
         var consecutiveRetries = 0
         
-        while consecutiveRetries < 1000 {
+        while consecutiveRetries < 500 {
             let value = CommonPersonName(gender: .male)
             
             if generatedValues.contains(value) {
@@ -26,7 +26,7 @@ class CommonPersonNameTests: XCTestCase {
         generatedValues.removeAll()
         consecutiveRetries = 0
         
-        while consecutiveRetries < 1000 {
+        while consecutiveRetries < 500 {
             let value = CommonPersonName(gender: .female)
             
             if generatedValues.contains(value) {

@@ -9,7 +9,7 @@ class OceanShipNameTests: XCTestCase {
         var generatedValues = Set<OceanShipName>()
         var consecutiveRetries = 0
         
-        while consecutiveRetries < 100 {
+        while consecutiveRetries < 25 {
             let value = OceanShipName()
             
             if generatedValues.contains(value) {
