@@ -2,7 +2,7 @@
 
 import Foundation
 
-public struct ComplexWorkTitle: Hashable {
+public struct UnusualWorkTitle: Hashable {
     
     private static let formatters: [() -> String] = [
         {
@@ -174,12 +174,12 @@ public struct ComplexWorkTitle: Hashable {
     private let value: String
     
     public init() {
-        value = ComplexWorkTitle.formatters.randomElement()!()
+        value = UnusualWorkTitle.formatters.randomElement()!()
     }
     
 }
 
-extension ComplexWorkTitle: CustomStringConvertible {
+extension UnusualWorkTitle: CustomStringConvertible {
     public var description: String {
         value
     }

@@ -8,7 +8,6 @@ public struct Adjective {
         "addicting",
         "adorable",
         "adventurous",
-        "afraid",
         "aggressive",
         "agitated",
         "agreeable",

@@ -6,11 +6,11 @@ import XCTest
 class ComplexWorkTitleTests: XCTestCase {
     
     func testUniqueness() {
-        var generatedValues = Set<ComplexWorkTitle>()
+        var generatedValues = Set<UnusualWorkTitle>()
         var consecutiveRetries = 0
         
         while consecutiveRetries < 5 {
-            let value = ComplexWorkTitle()
+            let value = UnusualWorkTitle()
             
             if generatedValues.contains(value) {
                 consecutiveRetries += 1
