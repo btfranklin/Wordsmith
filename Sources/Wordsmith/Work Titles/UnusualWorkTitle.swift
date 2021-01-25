@@ -12,6 +12,13 @@ public struct UnusualWorkTitle: Hashable {
             "\(Noun())-\(Verb(tense:.presentPerfect))".capitalized
         },
         {
+            let verb = Verb(tense:.presentPerfect).description.firstUppercased
+            let noun = Noun().description.firstUppercased
+            let vowelNoun = noun.startsWithVowel
+            let determiner = Determiner(forVowel: vowelNoun)
+            return "\(verb) \(determiner.isArticle ? determiner.description : determiner.description.firstUppercased) \(noun)"
+        },
+        {
             let opener = ["When", "Where", "Why", "As"].randomElement()!
             let noun = Noun().description.firstUppercased
             let vowelNoun = noun.startsWithVowel

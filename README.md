@@ -15,7 +15,7 @@ The Wordsmith package is a standard Swift package, and can easily be added to yo
 To include Wordsmith in another Swift Package Manager package, add it to the `dependencies` attribute defined in your `Package.swift` file. You can select the version using the `from` parameter. For example:
 ```
 dependencies: [
-    .package(url: "https://github.com/dunesailer/Wordsmith.git", from: "1.0.0")
+    .package(url: "https://github.com/dunesailer/Wordsmith.git", from: "1.1.0")
 ]
 ```
 

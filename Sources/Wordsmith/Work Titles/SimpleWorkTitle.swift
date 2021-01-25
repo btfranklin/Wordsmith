@@ -7,24 +7,17 @@ public struct SimpleWorkTitle: Hashable {
     
     private static let formatters: [() -> String] = [
         {
-            Noun().description.firstUppercased
+            Noun(plural: Bool.random()).description.firstUppercased
         },
         {
-            Noun().description.firstUppercased
-        },
-        {
-            Noun().description.firstUppercased
+            let noun = Noun()
+            let vowelNoun = noun.description.startsWithVowel
+            return "\(Article(forVowel: vowelNoun)) \(noun)".capitalized
         },
         {
             let noun = Noun()
             let vowelNoun = noun.description.startsWithVowel
             return "\(Determiner(forVowel: vowelNoun)) \(noun)".capitalized
-        },
-        {
-            Adjective().description.firstUppercased
-        },
-        {
-            Adjective().description.firstUppercased
         },
         {
             Adjective().description.firstUppercased
@@ -36,23 +29,13 @@ public struct SimpleWorkTitle: Hashable {
             Verb(tense:.presentPerfect).description.firstUppercased
         },
         {
-            let verb = Verb(tense:.presentPerfect).description.firstUppercased
-            let noun = Noun().description.firstUppercased
-            let vowelNoun = noun.startsWithVowel
-            let determiner = Determiner(forVowel: vowelNoun)
-            return "\(verb) \(determiner.isArticle ? determiner.description : determiner.description.firstUppercased) \(noun)"
-        },
-        {
             "\(TimeOfDay()) \(Verb(tense:.present))".capitalized
         },
         {
-            "\(TimeOfDay()) \(Noun())".capitalized
+            "\(TimeOfDay()) \(Noun(plural: Bool.random()))".capitalized
         },
         {
-            "\(Adjective()) \(Noun())".capitalized
-        },
-        {
-            "\(Adjective()) \(Noun())".capitalized
+            "\(Adjective()) \(Noun(plural: Bool.random()))".capitalized
         },
         {
             let adjective = Adjective()
@@ -61,8 +44,8 @@ public struct SimpleWorkTitle: Hashable {
         },
         {
             let thing = Bool.random() ?
-                Noun().description.firstUppercased :
-                "\(Adjective()) \(Noun())".capitalized
+                Noun(plural: Bool.random()).description.firstUppercased :
+                "\(Adjective()) \(Noun(plural: Bool.random()))".capitalized
             
             var prepositionalPhrase: String? = nil
             if Bool.random() {
@@ -95,6 +78,20 @@ public struct SimpleWorkTitle: Hashable {
         },
         {
             "\(UCBerkeleyEmotion().description.firstUppercased) in \(TownName())"
+        },
+        {
+            let criminalGangName = CriminalGangName()
+            return "\(criminalGangName.beginsWithPersonName ? "" : "The ")\(criminalGangName)"
+        },
+        {
+            let adjectiveString = Bool.random() ? "\(Adjective().description.firstUppercased) " : ""
+            let adventureWord = ["Adventures", "Journey", "Journeys", "Travels", "Tale", "Escapades"].randomElement()!
+            return "The \(adjectiveString)\(adventureWord) of \(CommonPersonName())"
+        },
+        {
+            let adjectiveString = Bool.random() ? "\(Adjective().description.firstUppercased) " : ""
+            let adventureWord = ["Adventures", "Journey", "Journeys", "Travels", "Tale", "Voyage"].randomElement()!
+            return "The \(adjectiveString)\(adventureWord) of the '\(OceanShipName())'"
         },
     ]
     

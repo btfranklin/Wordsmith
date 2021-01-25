@@ -4,13 +4,16 @@ import Foundation
 
 public struct CriminalGangName: Hashable {
 
-    private static let formatters: [() -> String] = [
+    private static let personsGroupFormatters: [() -> String] = [
         {
             "\(CommonPersonGivenName())'s \(VillainousPersonNoun(plural: true).description.capitalized)"
         },
         {
             "\(CommonPersonGivenName())'s \(PrimitiveWeapon(plural: true).description.capitalized)"
         },
+    ]
+
+    private static let normalFormatters: [() -> String] = [
         {
             "\(MartialSocialConcept().description.capitalized) \(VillainousPersonNoun(plural: true).description.capitalized)"
         },
@@ -31,10 +34,18 @@ public struct CriminalGangName: Hashable {
         },
     ]
 
+    public let beginsWithPersonName: Bool
+
     private let value: String
 
     public init() {
-        value = CriminalGangName.formatters.randomElement()!()
+        if Bool.random(probability: 25) {
+            beginsWithPersonName = true
+            value = CriminalGangName.personsGroupFormatters.randomElement()!()
+        } else {
+            beginsWithPersonName = false
+            value = CriminalGangName.normalFormatters.randomElement()!()
+        }
     }
 }
 
