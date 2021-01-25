@@ -36,10 +36,11 @@ public struct SimpleWorkTitle: Hashable {
             Verb(tense:.presentPerfect).description.firstUppercased
         },
         {
-            "\(Verb(tense:.presentPerfect)) \(Noun())".capitalized
-        },
-        {
-            "\(Noun())-\(Verb(tense:.presentPerfect))".capitalized
+            let verb = Verb(tense:.presentPerfect).description.firstUppercased
+            let noun = Noun().description.firstUppercased
+            let vowelNoun = noun.startsWithVowel
+            let determiner = Determiner(forVowel: vowelNoun)
+            return "\(verb) \(determiner.isArticle ? determiner.description : determiner.description.firstUppercased) \(noun)"
         },
         {
             "\(TimeOfDay()) \(Verb(tense:.present))".capitalized
@@ -54,7 +55,9 @@ public struct SimpleWorkTitle: Hashable {
             "\(Adjective()) \(Noun())".capitalized
         },
         {
-            "The \(Adjective()) \(Noun())".capitalized
+            let adjective = Adjective()
+            let vowelAdjective = adjective.description.startsWithVowel
+            return "\(Article(forVowel: vowelAdjective)) \(adjective) \(Noun())".capitalized
         },
         {
             let thing = Bool.random() ?
@@ -81,6 +84,17 @@ public struct SimpleWorkTitle: Hashable {
         },
         {
             TownName().description
+        },
+        {
+            UCBerkeleyEmotion().description.firstUppercased
+        },
+        {
+            let emotion = UCBerkeleyEmotion()
+            let vowelEmotion = emotion.description.startsWithVowel
+            return "\(Determiner(forVowel: vowelEmotion)) \(emotion)".capitalized
+        },
+        {
+            "\(UCBerkeleyEmotion().description.firstUppercased) in \(TownName())"
         },
     ]
     

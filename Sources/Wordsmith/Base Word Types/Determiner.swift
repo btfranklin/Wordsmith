@@ -11,14 +11,14 @@ public struct Determiner {
         "her",
         "his",
     ]
-    
+
     private let value: String
     public let isArticle: Bool
-    
+
     public init(forVowel: Bool = false) {
-        
+
         var value = Determiner.options.randomElement()!
-        
+
         if value == "a" {
             isArticle = true
             
@@ -30,10 +30,10 @@ public struct Determiner {
         } else {
             isArticle = false
         }
-        
+
         self.value = value
     }
-    
+
 }
 
 extension Determiner: CustomStringConvertible {
