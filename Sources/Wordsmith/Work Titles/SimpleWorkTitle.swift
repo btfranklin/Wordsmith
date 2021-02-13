@@ -77,7 +77,16 @@ public struct SimpleWorkTitle: Hashable {
             return "\(Determiner(forVowel: vowelEmotion)) \(emotion)".capitalized
         },
         {
-            "\(UCBerkeleyEmotion().description.firstUppercased) in \(TownName())"
+            let topic = Bool.random() ? UCBerkeleyEmotion().description : MartialSocialConcept().description
+            return "\(topic.firstUppercased) in \(TownName())"
+        },
+        {
+            "\(MartialSocialConcept().description.firstUppercased) and \(MartialSocialConcept().description.firstUppercased)"
+        },
+        {
+            let format = ["A Treatise on", "On", "A Discussion of", "An Analysis of", "Commentary on", "An Examination of"].randomElement()!
+            let topic = Bool.random() ? MartialSocialConcept().description : Noun(plural: true).description
+            return "\(format) \(topic.firstUppercased)"
         },
         {
             let criminalGangName = CriminalGangName()
@@ -100,7 +109,6 @@ public struct SimpleWorkTitle: Hashable {
     public init() {
         value = SimpleWorkTitle.formatters.randomElement()!()
     }
-    
 }
 
 extension SimpleWorkTitle: CustomStringConvertible {
