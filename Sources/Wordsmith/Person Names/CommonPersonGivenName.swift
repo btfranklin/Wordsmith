@@ -2070,3 +2070,8 @@ extension CommonPersonGivenName: CustomStringConvertible {
     }
 }
 
+extension CommonPersonGivenName {
+    public var possessiveForm: String {
+        value.last == "s" ? "\(value)'" : "\(value)'s"
+    }
+}

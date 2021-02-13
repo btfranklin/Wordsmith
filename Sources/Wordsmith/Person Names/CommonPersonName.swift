@@ -25,3 +25,8 @@ extension CommonPersonName: CustomStringConvertible {
     }
 }
 
+extension CommonPersonName {
+    public var possessiveForm: String {
+        description.last == "s" ? "\(description)'" : "\(description)'s"
+    }
+}

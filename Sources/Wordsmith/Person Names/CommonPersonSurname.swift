@@ -1019,3 +1019,9 @@ extension CommonPersonSurname: CustomStringConvertible {
         value
     }
 }
+
+extension CommonPersonSurname {
+    public var possessiveForm: String {
+        value.last == "s" ? "\(value)'" : "\(value)'s"
+    }
+}
