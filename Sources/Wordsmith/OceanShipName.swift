@@ -78,13 +78,7 @@ public struct OceanShipName: Hashable {
                 
             default:
                 let gender: BinaryGender = Bool.random(probability: 75) ? .female : .male
-                let personName = CommonPersonGivenName(gender: gender).description
-                let possessivePersonName: String
-                if personName.last == "s" {
-                    possessivePersonName = "\(personName)'"
-                } else {
-                    possessivePersonName = "\(personName)'s"
-                }
+                let possessivePersonName = CommonPersonGivenName(gender: gender).possessiveForm
                 possessiveOwner = possessivePersonName
             }
             
@@ -109,13 +103,7 @@ public struct OceanShipName: Hashable {
             
         default:
             let gender: BinaryGender = Bool.random(probability: 75) ? .female : .male
-            let personName = CommonPersonGivenName(gender: gender).description
-            let possessivePersonName: String
-            if personName.last == "s" {
-                possessivePersonName = "\(personName)'"
-            } else {
-                possessivePersonName = "\(personName)'s"
-            }
+            let possessivePersonName = CommonPersonGivenName(gender: gender).possessiveForm
             possessiveOwner = possessivePersonName
         }
         

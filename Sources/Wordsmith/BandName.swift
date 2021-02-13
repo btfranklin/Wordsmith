@@ -23,6 +23,9 @@ public struct BandName: Hashable {
         {
             "\(CommonPersonGivenName()) and the \(Noun(plural: true).description.capitalized)"
         },
+        {
+            "\(CommonPersonGivenName().possessiveForm) \(Noun(plural: true).description.capitalized)"
+        },
     ]
     
     private let value: String

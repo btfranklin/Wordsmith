@@ -6,10 +6,10 @@ public struct CriminalGangName: Hashable {
 
     private static let personsGroupFormatters: [() -> String] = [
         {
-            "\(CommonPersonGivenName())'s \(VillainousPersonNoun(plural: true).description.capitalized)"
+            "\(CommonPersonGivenName().possessiveForm) \(VillainousPersonNoun(plural: true).description.capitalized)"
         },
         {
-            "\(CommonPersonGivenName())'s \(PrimitiveWeapon(plural: true).description.capitalized)"
+            "\(CommonPersonGivenName().possessiveForm) \(PrimitiveWeapon(plural: true).description.capitalized)"
         },
     ]
 
