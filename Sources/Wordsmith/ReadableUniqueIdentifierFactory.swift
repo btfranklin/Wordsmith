@@ -15,7 +15,7 @@ public class ReadableUniqueIdentifierFactory {
     
     private var counter = 0
     
-    public func createReadableUniqueIdentifier() -> String {
+    public func makeIdentifier() -> String {
         let readableUniqueIdentifier = formatters.randomElement()!(counter)
         counter += 1
         return readableUniqueIdentifier

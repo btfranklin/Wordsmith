@@ -133,18 +133,15 @@ public class ExoticCharacterFactory {
         
     }
     
-    public func getRandomCharacter(fromSet name: String) -> String {
+    public func randomCharacter(fromSet name: String) -> String {
         guard let namedSet = sets[name] else {
             fatalError("Invalid character set requested: \(name)")
         }
         return namedSet.randomElement()!
     }
     
-    public func getRandomCharacter() -> String {
-        let setNames = [String](sets.keys)
-        let setName = setNames.randomElement()!
-        let set = sets[setName]!
-        
+    public func randomCharacter() -> String {
+        let set = sets.randomElement()!.value
         return set.randomElement()!
     }
 
