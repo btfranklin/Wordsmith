@@ -65,7 +65,7 @@ public struct FictionalCompoundName: Hashable {
     }
     
     public init() {
-        var components = [FictionalElementName]()
+        var components: [FictionalElementName] = []
         
         for _ in 1...2 {
             components.append(FictionalElementName())
