@@ -7,7 +7,7 @@ public struct Surname: Hashable {
     static let options: [String] = {
         let decoder = JSONDecoder()
         guard
-            let url = Bundle.module.url(forResource: "Surnames", withExtension: "json"),
+            let url = Bundle.module.url(forResource: "Common Surnames", withExtension: "json"),
             let data = try? Data(contentsOf: url),
             let names = try? decoder.decode([String].self, from: data)
         else {

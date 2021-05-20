@@ -1,11 +1,11 @@
 import Wordsmith
 
 for _ in 1...20 {
-    let name = CommonPersonGivenName(gender: .male)
+    let name = GivenName(gender: .male)
     print("Male: \(name)")
 }
 
 for _ in 1...20 {
-    let name = CommonPersonGivenName(gender: .female)
+    let name = GivenName(gender: .female)
     print("Female: \(name)")
 }

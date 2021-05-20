@@ -8,7 +8,7 @@ public struct GivenName: Hashable {
     static let maleNameOptions: [String] = {
         let decoder = JSONDecoder()
         guard
-            let url = Bundle.module.url(forResource: "Male Given Names", withExtension: "json"),
+            let url = Bundle.module.url(forResource: "Common Male Given Names", withExtension: "json"),
             let data = try? Data(contentsOf: url),
             let names = try? decoder.decode([String].self, from: data)
         else {
@@ -21,7 +21,7 @@ public struct GivenName: Hashable {
     static let femaleNameOptions: [String] = {
         let decoder = JSONDecoder()
         guard
-            let url = Bundle.module.url(forResource: "Female Given Names", withExtension: "json"),
+            let url = Bundle.module.url(forResource: "Common Female Given Names", withExtension: "json"),
             let data = try? Data(contentsOf: url),
             let names = try? decoder.decode([String].self, from: data)
         else {

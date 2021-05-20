@@ -3,7 +3,7 @@
 import Foundation
 import DunesailerUtilities
 
-public struct PersonName {
+public struct PersonName: Hashable {
     
     public let givenName: String
     public let surname: String
