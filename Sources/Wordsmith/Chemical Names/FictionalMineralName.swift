@@ -7,7 +7,7 @@ public struct FictionalMineralName: Hashable {
 
     private static let rootWordProviders: [() -> CustomStringConvertible] = [
         {
-            CommonPersonGivenName()
+            GivenName()
         },
         {
             WeirdName(syllableCount: 2, allowHyphen: false, allowApostrophe: false)

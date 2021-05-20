@@ -21,10 +21,10 @@ public struct BandName: Hashable {
             return "The \(Noun(plural: true))".capitalized
         },
         {
-            "\(CommonPersonGivenName()) and the \(Noun(plural: true).description.capitalized)"
+            "\(GivenName()) and the \(Noun(plural: true).description.capitalized)"
         },
         {
-            "\(CommonPersonGivenName().possessiveForm) \(Noun(plural: true).description.capitalized)"
+            "\(GivenName().possessiveForm) \(Noun(plural: true).description.capitalized)"
         },
     ]
     

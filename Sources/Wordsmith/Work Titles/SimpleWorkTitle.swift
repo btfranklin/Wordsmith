@@ -63,7 +63,7 @@ public struct SimpleWorkTitle: Hashable {
             return "\(Determiner(forVowel: vowelAdjective)) \(adjective) \(Noun())".capitalized
         },
         {
-            CommonPersonName().description
+            PersonName().description
         },
         {
             TownName().description
@@ -95,7 +95,7 @@ public struct SimpleWorkTitle: Hashable {
         {
             let adjectiveString = Bool.random() ? "\(Adjective().description.firstUppercased) " : ""
             let adventureWord = ["Adventures", "Journey", "Journeys", "Travels", "Tale", "Escapades"].randomElement()!
-            return "The \(adjectiveString)\(adventureWord) of \(CommonPersonName())"
+            return "The \(adjectiveString)\(adventureWord) of \(PersonName())"
         },
         {
             let adjectiveString = Bool.random() ? "\(Adjective().description.firstUppercased) " : ""

@@ -7,10 +7,10 @@ public struct FictionalElementName: Hashable {
     
     private static let rootWordProviders: [() -> CustomStringConvertible] = [
         {
-            CommonPersonGivenName()
+            GivenName()
         },
         {
-            CommonPersonSurname()
+            Surname()
         },
         {
             WeirdName(syllableCount: 2, allowHyphen: false, allowApostrophe: false)

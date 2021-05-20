@@ -3,14 +3,14 @@
 import XCTest
 @testable import Wordsmith
 
-class CommonPersonNameTests: XCTestCase {
+class GivenNameTests: XCTestCase {
     
     func testUniqueness() {
-        var generatedValues = Set<CommonPersonName>()
+        var generatedValues = Set<GivenName>()
         var consecutiveRetries = 0
         
-        while consecutiveRetries < 500 {
-            let value = CommonPersonName(gender: .male)
+        while consecutiveRetries < 1000 {
+            let value = GivenName(gender: .male)
             
             if generatedValues.contains(value) {
                 consecutiveRetries += 1
@@ -26,8 +26,8 @@ class CommonPersonNameTests: XCTestCase {
         generatedValues.removeAll()
         consecutiveRetries = 0
         
-        while consecutiveRetries < 500 {
-            let value = CommonPersonName(gender: .female)
+        while consecutiveRetries < 1000 {
+            let value = GivenName(gender: .female)
             
             if generatedValues.contains(value) {
                 consecutiveRetries += 1

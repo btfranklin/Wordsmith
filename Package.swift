@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "Wordsmith",
     platforms: [
-        .macOS(.v11), .iOS(.v13),
+        .macOS(.v11), .iOS(.v14), .tvOS(.v14), .watchOS(.v7)
     ],
     products: [
         .library(
@@ -17,12 +17,24 @@ let package = Package(
     dependencies: [
         .package(name: "Dunesailer Utilities",
                  url: "https://github.com/dunesailer/Utilities.git",
-                 from: "2.0.5"),
+                 from: "2.0.6"),
     ],
     targets: [
         .target(
             name: "Wordsmith",
-            dependencies: [.product(name: "DunesailerUtilities", package: "Dunesailer Utilities")]),
+            dependencies: [
+                .product(name: "DunesailerUtilities",
+                         package: "Dunesailer Utilities")
+            ],
+            resources: [
+                .process("Base Word Types/Adjectives.json"),
+                .process("Base Word Types/Adverbs.json"),
+                .process("Base Word Types/Nouns.json"),
+                .process("Base Word Types/Verbs.json"),
+                .process("Person Names/Common Female Given Names.json"),
+                .process("Person Names/Common Male Given Names.json"),
+                .process("Person Names/Common Surnames.json"),
+            ]),
         .testTarget(
             name: "WordsmithTests",
             dependencies: ["Wordsmith"]),

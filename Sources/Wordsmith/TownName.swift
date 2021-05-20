@@ -27,7 +27,7 @@ public struct TownName: Hashable {
     private let value: String
     
     public init() {
-        let surname = CommonPersonSurname()
+        let surname = Surname()
         var str: String
         
         switch Int.random(in: 0...100) {

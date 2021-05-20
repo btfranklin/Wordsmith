@@ -3,14 +3,14 @@
 import XCTest
 @testable import Wordsmith
 
-class CommonPersonSurnameTests: XCTestCase {
+class SurnameTests: XCTestCase {
     
     func testUniqueness() {
-        var generatedValues = Set<CommonPersonSurname>()
+        var generatedValues = Set<Surname>()
         var consecutiveRetries = 0
         
         while consecutiveRetries < 1000 {
-            let value = CommonPersonSurname()
+            let value = Surname()
             
             if generatedValues.contains(value) {
                 consecutiveRetries += 1

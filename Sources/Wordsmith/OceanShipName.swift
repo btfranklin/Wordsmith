@@ -7,16 +7,16 @@ public struct OceanShipName: Hashable {
     
     private static let formatters: [() -> String] = [
         {
-            CommonPersonGivenName(gender: .female).description
+            GivenName(gender: .female).description
         },
         {
-            CommonPersonGivenName(gender: .female).description
+            GivenName(gender: .female).description
         },
         {
-            CommonPersonGivenName(gender: .female).description
+            GivenName(gender: .female).description
         },
         {
-            CommonPersonGivenName(gender: .female).description
+            GivenName(gender: .female).description
         },
         {
             MartialSocialConcept().description.firstUppercased
@@ -78,7 +78,7 @@ public struct OceanShipName: Hashable {
                 
             default:
                 let gender: BinaryGender = Bool.random(probability: 75) ? .female : .male
-                let possessivePersonName = CommonPersonGivenName(gender: gender).possessiveForm
+                let possessivePersonName = GivenName(gender: gender).possessiveForm
                 possessiveOwner = possessivePersonName
             }
             
@@ -103,7 +103,7 @@ public struct OceanShipName: Hashable {
             
         default:
             let gender: BinaryGender = Bool.random(probability: 75) ? .female : .male
-            let possessivePersonName = CommonPersonGivenName(gender: gender).possessiveForm
+            let possessivePersonName = GivenName(gender: gender).possessiveForm
             possessiveOwner = possessivePersonName
         }
         

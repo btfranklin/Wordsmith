@@ -1,6 +1,31 @@
-//  Created by B.T. Franklin on 5/27/18
+//  Created by B.T. Franklin on 3/10/17.
 
-public protocol PersonName: CustomStringConvertible, Hashable {
-    var givenName: String { get }
-    var surname: String { get }
+import Foundation
+import DunesailerUtilities
+
+public struct PersonName {
+    
+    public let givenName: String
+    public let surname: String
+    
+    public init(gender: BinaryGender) {
+        givenName = GivenName(gender: gender).description
+        surname = Surname().description
+    }
+
+    public init() {
+        self.init(gender: Bool.random() ? .male : .female)
+    }
+}
+
+extension PersonName: CustomStringConvertible {
+    public var description: String {
+        "\(givenName) \(surname)"
+    }
+}
+
+extension PersonName {
+    public var possessiveForm: String {
+        description.last == "s" ? "\(description)'" : "\(description)'s"
+    }
 }
