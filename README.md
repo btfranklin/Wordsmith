@@ -1,27 +1,27 @@
 Wordsmith
 =========
 
+[![Platforms](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fdunesailer%2FWordsmith%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/dunesailer/Wordsmith)
+[![Swift versions](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fdunesailer%2FWordsmith%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/dunesailer/Wordsmith)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/dunesailer/Wordsmith/blob/master/LICENSE)
-[![Platform](https://img.shields.io/badge/in-swift5.3-orange.svg)](https://github.com/apple/swift)
+[![Swift Package Manager compatible](https://img.shields.io/badge/SPM-compatible-brightgreen.svg?style=flat&colorA=28a745&&colorB=4E4E4E)](https://github.com/apple/swift-package-manager)
+[![GitHub tag](https://img.shields.io/github/tag/dunesailer/Wordsmith.svg)](https://github.com/dunesailer/Wordsmith)
 [![build](https://github.com/dunesailer/Wordsmith/workflows/build/badge.svg)](https://github.com/dunesailer/Wordsmith/actions?query=workflow%3Abuild)
 
-Dunesailer Research's Wordsmith package contains utilities to assist with the generation of interesting creative text elements, such as realistic names of humans, artwork, and ships, for use in projects developed in the Swift programming language. Though the functionality provided is driven by the specific needs of Dunesailer Research itself, we believe there is value to the broader programmming public contained therein, so we are pleased to make these available in a free and open source format.
+Dunesailer Research's `Wordsmith` package contains utilities to assist with the generation of interesting creative text elements, such as realistic names of humans, artwork, and ships.
 
+## Installation
 
-## Using the Package
+To install the Swift Package, please follow the steps below:
 
-The Wordsmith package is a standard Swift package, and can easily be added to your project using Xcode. Simply select the *Swift Packages* tab of your project root, click the + button to add a dependency, search for "Wordsmith", and add it. Please note that you will need to have Xcode connected to GitHub for this to work.
+- Add `https://github.com/dunesailer/Wordsmith` as a [Swift Package Manager](https://swift.org/package-manager/) dependency to your project.
+- When asked to **Choose Package Options**, use the default settings provided by Xcode.
+- When asked to **Add Package**, add `Wordsmith` to your desired target(s).
 
-To include Wordsmith in another Swift Package Manager package, add it to the `dependencies` attribute defined in your `Package.swift` file. You can select the version using the `from` parameter. For example:
-```
-dependencies: [
-    .package(url: "https://github.com/dunesailer/Wordsmith.git", from: "1.3.0")
-]
-```
+## Playgrounds
 
+In the [Playgrounds folder](https://github.com/dunesailer/Wordsmith/tree/master/Sources/Playgrounds), you will find examples of how to use many of the package's text generators.
 
-## About Us
+## License
 
-Dunesailer Research's mission is to build and advance technology that allows software to be creative in all realms.
-
-Dunesailer is the brainchild and solo endeavor of B.T. Franklin, a software engineer and researcher located in Phoenix, Arizona, USA.
+`Wordsmith` was written by B.T. Franklin ([@btfranklin](https://github.com/btfranklin)) from 2018 onward and is licensed under the [MIT](https://opensource.org/licenses/MIT) license. See [LICENSE.md](LICENSE.md).
