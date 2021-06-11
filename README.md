@@ -20,7 +20,7 @@ To install the Swift Package, please follow the steps below:
 
 ## Playgrounds
 
-In the [Playgrounds folder](https://github.com/dunesailer/Wordsmith/tree/master/Sources/Playgrounds), you will find examples of how to use many of the package's text generators.
+In the [Playgrounds folder](https://github.com/dunesailer/Wordsmith/tree/master/Playgrounds), you will find examples of how to use many of the package's text generators.
 
 ## License
 
