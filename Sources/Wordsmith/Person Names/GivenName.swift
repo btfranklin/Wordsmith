@@ -1,7 +1,6 @@
 //  Created by B.T. Franklin on 5/30/18
 
 import Foundation
-import DunesailerUtilities
 
 public struct GivenName: Hashable {
     

@@ -1,6 +1,7 @@
 //  Created by B.T. Franklin on 12/8/20.
 
 import Foundation
+import ControlledChaos
 
 public struct CriminalGangName: Hashable {
 
@@ -39,7 +40,7 @@ public struct CriminalGangName: Hashable {
     private let value: String
 
     public init() {
-        if Bool.random(probability: 25) {
+        if Bool.random(probability: 0.25) {
             beginsWithPersonName = true
             value = CriminalGangName.personsGroupFormatters.randomElement()!()
         } else {

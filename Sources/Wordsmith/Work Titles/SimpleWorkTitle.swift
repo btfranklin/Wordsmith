@@ -1,7 +1,6 @@
 //  Created by B.T. Franklin on 9/1/19
 
 import Foundation
-import DunesailerUtilities
 
 public struct SimpleWorkTitle: Hashable {
     

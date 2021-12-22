@@ -1,7 +1,6 @@
 //  Created by B.T. Franklin on 7/8/18
 
 import Foundation
-import DunesailerUtilities
 
 public struct OceanShipName: Hashable {
     
@@ -34,26 +33,26 @@ public struct OceanShipName: Hashable {
             OceanShipNameObject().description.firstUppercased
         },
         {
-            let thing: CustomStringConvertible = Bool.random(probability: 75) ? OceanShipNameObject() : PrimitiveWeapon()
+            let thing: CustomStringConvertible = Bool.random(probability: 0.75) ? OceanShipNameObject() : PrimitiveWeapon()
             return "\(OceanShipNameColor()) \(thing)".capitalized
         },
         {
             ShipNameAdjective().description.firstUppercased
         },
         {
-            let thing: CustomStringConvertible = Bool.random(probability: 85) ? OceanShipNameObject() : PrimitiveWeapon()
+            let thing: CustomStringConvertible = Bool.random(probability: 0.85) ? OceanShipNameObject() : PrimitiveWeapon()
             return "\(ShipNameAdjective()) \(thing)".capitalized
         },
         {
-            let thing: CustomStringConvertible = Bool.random(probability: 85) ? OceanShipNameObject() : PrimitiveWeapon()
+            let thing: CustomStringConvertible = Bool.random(probability: 0.85) ? OceanShipNameObject() : PrimitiveWeapon()
             return "\(ShipNameAdjective()) \(thing)".capitalized
         },
         {
-            let thing: CustomStringConvertible = Bool.random(probability: 75) ? MartialSocialConcept() : PrimitiveWeapon()
+            let thing: CustomStringConvertible = Bool.random(probability: 0.75) ? MartialSocialConcept() : PrimitiveWeapon()
             return "\(TimeOfDay()) \(thing)".capitalized
         },
         {
-            let thing: CustomStringConvertible = Bool.random(probability: 85) ? OceanShipNameObject() : PrimitiveWeapon()
+            let thing: CustomStringConvertible = Bool.random(probability: 0.85) ? OceanShipNameObject() : PrimitiveWeapon()
             return "\(TownName()) \(thing)".capitalized
         },
         {
@@ -77,7 +76,7 @@ public struct OceanShipName: Hashable {
                 possessiveOwner = possessiveMartialSocialConcept
                 
             default:
-                let gender: BinaryGender = Bool.random(probability: 75) ? .female : .male
+                let gender: BinaryGender = Bool.random(probability: 0.75) ? .female : .male
                 let possessivePersonName = GivenName(gender: gender).possessiveForm
                 possessiveOwner = possessivePersonName
             }
@@ -102,7 +101,7 @@ public struct OceanShipName: Hashable {
             possessiveOwner = possessiveMartialSocialConcept
             
         default:
-            let gender: BinaryGender = Bool.random(probability: 75) ? .female : .male
+            let gender: BinaryGender = Bool.random(probability: 0.75) ? .female : .male
             let possessivePersonName = GivenName(gender: gender).possessiveForm
             possessiveOwner = possessivePersonName
         }

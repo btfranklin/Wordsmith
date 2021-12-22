@@ -1,7 +1,6 @@
 //  Created by B.T. Franklin on 11/27/19.
 
 import Foundation
-import DunesailerUtilities
 
 public struct FictionalCompoundName: Hashable {
     

@@ -1,6 +1,7 @@
 //  Created by B.T. Franklin on 3/23/18
 
 import Foundation
+import StringBooster
 
 public struct TownName: Hashable {
     

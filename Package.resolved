@@ -2,12 +2,21 @@
   "object": {
     "pins": [
       {
-        "package": "Dunesailer Utilities",
-        "repositoryURL": "https://github.com/dunesailer/Utilities.git",
+        "package": "ControlledChaos",
+        "repositoryURL": "https://github.com/btfranklin/ControlledChaos",
         "state": {
           "branch": null,
-          "revision": "ff130ed7342410a41286d1897b438851aadbcfc0",
-          "version": "2.0.6"
+          "revision": "4b5476d112f2d92f76579e021210073cd9060e14",
+          "version": "1.1.1"
+        }
+      },
+      {
+        "package": "StringBooster",
+        "repositoryURL": "https://github.com/btfranklin/StringBooster",
+        "state": {
+          "branch": null,
+          "revision": "2122994ffded071f7aaa426eadc64013c0a05ef9",
+          "version": "1.0.1"
         }
       }
     ]

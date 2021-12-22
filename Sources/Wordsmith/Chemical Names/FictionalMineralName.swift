@@ -1,7 +1,6 @@
 //  Created by B.T. Franklin on 1/24/21.
 
 import Foundation
-import DunesailerUtilities
 
 public struct FictionalMineralName: Hashable {
 
