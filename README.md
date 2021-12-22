@@ -10,14 +10,6 @@ Wordsmith
 
 Dunesailer Research's `Wordsmith` package contains utilities to assist with the generation of interesting creative text elements, such as realistic names of humans, artwork, and ships.
 
-## Installation
-
-To install the Swift Package, please follow the steps below:
-
-- Add `https://github.com/dunesailer/Wordsmith` as a [Swift Package Manager](https://swift.org/package-manager/) dependency to your project.
-- When asked to **Choose Package Options**, use the default settings provided by Xcode.
-- When asked to **Add Package**, add `Wordsmith` to your desired target(s).
-
 ## Playgrounds
 
 In the [Playgrounds folder](https://github.com/dunesailer/Wordsmith/tree/master/Playgrounds), you will find examples of how to use many of the package's text generators.
