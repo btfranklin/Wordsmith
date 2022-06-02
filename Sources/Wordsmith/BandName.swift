@@ -18,7 +18,7 @@ public struct BandName: Hashable {
             "The \(Adjective()) \(Noun(plural: true))".capitalized
         },
         {
-            return "The \(Noun(plural: true))".capitalized
+            "The \(Noun(plural: true))".capitalized
         },
         {
             "\(GivenName()) and the \(Noun(plural: true).description.capitalized)"
