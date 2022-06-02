@@ -87,28 +87,28 @@ public struct OceanShipName: Hashable {
 
             return "\(possessiveOwner) \(thing)"
         },
-    {
-        let possessiveOwner: String
-        switch Int.random(in: 0...2) {
-        case 0:
-            let martialSocialConcept = MartialSocialConcept().description.firstUppercased
-            let possessiveMartialSocialConcept: String
-            if martialSocialConcept.last == "s" {
-                possessiveMartialSocialConcept = "\(martialSocialConcept)'"
-            } else {
-                possessiveMartialSocialConcept = "\(martialSocialConcept)'s"
+        {
+            let possessiveOwner: String
+            switch Int.random(in: 0...2) {
+            case 0:
+                let martialSocialConcept = MartialSocialConcept().description.firstUppercased
+                let possessiveMartialSocialConcept: String
+                if martialSocialConcept.last == "s" {
+                    possessiveMartialSocialConcept = "\(martialSocialConcept)'"
+                } else {
+                    possessiveMartialSocialConcept = "\(martialSocialConcept)'s"
+                }
+                possessiveOwner = possessiveMartialSocialConcept
+
+            default:
+                let gender: BinaryGender = Bool.random(probability: 0.75) ? .female : .male
+                let possessivePersonName = GivenName(gender: gender).possessiveForm
+                possessiveOwner = possessivePersonName
             }
-            possessiveOwner = possessiveMartialSocialConcept
-            
-        default:
-            let gender: BinaryGender = Bool.random(probability: 0.75) ? .female : .male
-            let possessivePersonName = GivenName(gender: gender).possessiveForm
-            possessiveOwner = possessivePersonName
-        }
-        
-        let martialSocialConcept = MartialSocialConcept().description.firstUppercased
-        return "\(possessiveOwner) \(martialSocialConcept)"
-    },
+
+            let martialSocialConcept = MartialSocialConcept().description.firstUppercased
+            return "\(possessiveOwner) \(martialSocialConcept)"
+        },
     ]
     
     private let value: String
