@@ -6,14 +6,14 @@ import XCTest
 class WeirdNameGeneratorTests: XCTestCase {
 
     func testExamples() {
-        GeneratorExamplesTestUtil.printExamples(using: WeirdNameGenerator(syllableCount: 3))
+        ExamplesTestUtil.printExamples(using: WeirdNameGenerator(syllableCount: 3))
     }
 
     func testUniqueness() {
-        GeneratorUniquenessTestUtil.countUniqueValuesProduced(using: WeirdNameGenerator(syllableCount: 2), consecutiveRetryLimit: 50)
+        UniquenessTestUtil.countUniqueValuesProduced(using: WeirdNameGenerator(syllableCount: 2), consecutiveRetryLimit: 50)
     }
 
     func testRepeatableResults() {
-        GeneratorRepeatableResultsTestUtil.confirmRepeatableResults(using: WeirdNameGenerator(syllableCount: 3))
+        RepeatableResultsTestUtil.confirmRepeatableResults(using: WeirdNameGenerator(syllableCount: 3))
     }
 }

@@ -6,15 +6,15 @@ import XCTest
 class CriminalGangNameGeneratorTests: XCTestCase {
 
     func testExamples() {
-        GeneratorExamplesTestUtil.printExamples(using: CriminalGangNameGenerator())
+        ExamplesTestUtil.printExamples(using: CriminalGangNameGenerator())
     }
 
     func testUniqueness() {
-        GeneratorUniquenessTestUtil.countUniqueValuesProduced(using: CriminalGangNameGenerator())
+        UniquenessTestUtil.countUniqueValuesProduced(using: CriminalGangNameGenerator())
     }
 
     func testRepeatableResults() {
-        GeneratorRepeatableResultsTestUtil.confirmRepeatableResults(using: CriminalGangNameGenerator())
+        RepeatableResultsTestUtil.confirmRepeatableResults(using: CriminalGangNameGenerator())
     }
 }
 

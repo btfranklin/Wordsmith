@@ -2,14 +2,14 @@
 
 @testable import Wordsmith
 
-enum GeneratorUniquenessTestUtil {
+enum UniquenessTestUtil {
 
-    static func countUniqueValuesProduced(using generator: some TextComponent, consecutiveRetryLimit: Int = 10) {
+    static func countUniqueValuesProduced(using component: some TextComponent, consecutiveRetryLimit: Int = 10) {
         var generatedValues = Set<String>()
         var consecutiveRetries = 0
 
         while consecutiveRetries < consecutiveRetryLimit {
-            let value = generator.makeText()
+            let value = component.makeText()
 
             if generatedValues.contains(value) {
                 consecutiveRetries += 1

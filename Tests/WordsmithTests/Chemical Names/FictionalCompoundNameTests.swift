@@ -6,11 +6,11 @@ import XCTest
 class FictionalCompoundNameTests: XCTestCase {
 
     func testExamples() {
-        GeneratorExamplesTestUtil.printExamples(using: FictionalCompoundNameGenerator())
+        ExamplesTestUtil.printExamples(using: FictionalCompoundNameGenerator())
     }
 
     func testRepeatableResults() {
-        GeneratorRepeatableResultsTestUtil.confirmRepeatableResults(using: FictionalCompoundNameGenerator())
+        RepeatableResultsTestUtil.confirmRepeatableResults(using: FictionalCompoundNameGenerator())
     }
 
 }

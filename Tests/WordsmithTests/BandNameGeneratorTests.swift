@@ -6,15 +6,15 @@ import XCTest
 class BandNameGeneratorTests: XCTestCase {
 
     func testExamples() {
-        GeneratorExamplesTestUtil.printExamples(using: BandNameGenerator())
+        ExamplesTestUtil.printExamples(using: BandNameGenerator())
     }
     
     func testUniqueness() {
-        GeneratorUniquenessTestUtil.countUniqueValuesProduced(using: BandNameGenerator())
+        UniquenessTestUtil.countUniqueValuesProduced(using: BandNameGenerator())
     }
 
     func testRepeatableResults() {
-        GeneratorRepeatableResultsTestUtil.confirmRepeatableResults(using: BandNameGenerator())
+        RepeatableResultsTestUtil.confirmRepeatableResults(using: BandNameGenerator())
     }
 }
 

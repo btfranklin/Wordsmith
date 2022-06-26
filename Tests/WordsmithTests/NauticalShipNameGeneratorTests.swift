@@ -6,15 +6,15 @@ import XCTest
 class NauticalShipNameGeneratorTests: XCTestCase {
 
     func testExamples() {
-        GeneratorExamplesTestUtil.printExamples(using: NauticalShipNameGenerator())
+        ExamplesTestUtil.printExamples(using: NauticalShipNameGenerator())
     }
 
     func testUniqueness() {
-        GeneratorUniquenessTestUtil.countUniqueValuesProduced(using: NauticalShipNameGenerator(), consecutiveRetryLimit: 25)
+        UniquenessTestUtil.countUniqueValuesProduced(using: NauticalShipNameGenerator(), consecutiveRetryLimit: 25)
     }
 
     func testRepeatableResults() {
-        GeneratorRepeatableResultsTestUtil.confirmRepeatableResults(using: NauticalShipNameGenerator())
+        RepeatableResultsTestUtil.confirmRepeatableResults(using: NauticalShipNameGenerator())
     }
 }
 

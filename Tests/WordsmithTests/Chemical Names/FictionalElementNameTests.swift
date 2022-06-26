@@ -6,15 +6,15 @@ import XCTest
 class FictionalElementNameTests: XCTestCase {
     
     func testExamples() {
-        GeneratorExamplesTestUtil.printExamples(using: FictionalElementNameGenerator())
+        ExamplesTestUtil.printExamples(using: FictionalElementNameGenerator())
     }
 
     func testUniqueness() {
-        GeneratorUniquenessTestUtil.countUniqueValuesProduced(using: FictionalElementNameGenerator(), consecutiveRetryLimit: 25)
+        UniquenessTestUtil.countUniqueValuesProduced(using: FictionalElementNameGenerator(), consecutiveRetryLimit: 25)
     }
 
     func testRepeatableResults() {
-        GeneratorRepeatableResultsTestUtil.confirmRepeatableResults(using: FictionalElementNameGenerator())
+        RepeatableResultsTestUtil.confirmRepeatableResults(using: FictionalElementNameGenerator())
     }
     
 }

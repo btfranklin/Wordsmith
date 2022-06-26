@@ -6,14 +6,14 @@ import XCTest
 class TownNameGeneratorTests: XCTestCase {
     
     func testExamples() {
-        GeneratorExamplesTestUtil.printExamples(using: TownNameGenerator())
+        ExamplesTestUtil.printExamples(using: TownNameGenerator())
     }
 
     func testUniqueness() {
-        GeneratorUniquenessTestUtil.countUniqueValuesProduced(using: TownNameGenerator())
+        UniquenessTestUtil.countUniqueValuesProduced(using: TownNameGenerator())
     }
 
     func testRepeatableResults() {
-        GeneratorRepeatableResultsTestUtil.confirmRepeatableResults(using: TownNameGenerator())
+        RepeatableResultsTestUtil.confirmRepeatableResults(using: TownNameGenerator())
     }
 }

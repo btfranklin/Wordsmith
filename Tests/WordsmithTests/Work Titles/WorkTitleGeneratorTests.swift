@@ -6,14 +6,14 @@ import XCTest
 class WorkTitleGeneratorTests: XCTestCase {
 
     func testExamples() {
-        GeneratorExamplesTestUtil.printExamples(using: WorkTitleGenerator())
+        ExamplesTestUtil.printExamples(using: WorkTitleGenerator())
     }
 
     func testUniqueness() {
-        GeneratorUniquenessTestUtil.countUniqueValuesProduced(using: WorkTitleGenerator(), consecutiveRetryLimit: 5)
+        UniquenessTestUtil.countUniqueValuesProduced(using: WorkTitleGenerator(), consecutiveRetryLimit: 5)
     }
 
     func testRepeatableResults() {
-        GeneratorRepeatableResultsTestUtil.confirmRepeatableResults(using: WorkTitleGenerator())
+        RepeatableResultsTestUtil.confirmRepeatableResults(using: WorkTitleGenerator())
     }
 }

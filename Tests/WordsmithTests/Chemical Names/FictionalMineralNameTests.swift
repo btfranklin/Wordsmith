@@ -6,15 +6,15 @@ import XCTest
 class FictionalMineralNameTests: XCTestCase {
 
     func testExamples() {
-        GeneratorExamplesTestUtil.printExamples(using: FictionalMineralNameGenerator())
+        ExamplesTestUtil.printExamples(using: FictionalMineralNameGenerator())
     }
 
     func testUniqueness() {
-        GeneratorUniquenessTestUtil.countUniqueValuesProduced(using: FictionalMineralNameGenerator(), consecutiveRetryLimit: 25)
+        UniquenessTestUtil.countUniqueValuesProduced(using: FictionalMineralNameGenerator(), consecutiveRetryLimit: 25)
     }
 
     func testRepeatableResults() {
-        GeneratorRepeatableResultsTestUtil.confirmRepeatableResults(using: FictionalMineralNameGenerator())
+        RepeatableResultsTestUtil.confirmRepeatableResults(using: FictionalMineralNameGenerator())
     }
 
 }
