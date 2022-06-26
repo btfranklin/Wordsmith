@@ -1,4 +1,4 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.7
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -16,7 +16,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/btfranklin/ControlledChaos",
-                    .upToNextMajor(from: "1.2.0")),
+                    .upToNextMajor(from: "1.3.0")),
         .package(url: "https://github.com/btfranklin/StringBooster",
                     .upToNextMajor(from: "1.1.1")),
     ],
