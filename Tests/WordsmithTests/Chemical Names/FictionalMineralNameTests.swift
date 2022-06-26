@@ -5,23 +5,16 @@ import XCTest
 
 class FictionalMineralNameTests: XCTestCase {
 
+    func testExamples() {
+        GeneratorExamplesTestUtil.printExamples(using: FictionalMineralNameGenerator())
+    }
+
     func testUniqueness() {
-        var generatedValues = Set<FictionalMineralName>()
-        var consecutiveRetries = 0
+        GeneratorUniquenessTestUtil.countUniqueValuesProduced(using: FictionalMineralNameGenerator(), consecutiveRetryLimit: 25)
+    }
 
-        while consecutiveRetries < 25 {
-            let value = FictionalMineralName()
-
-            if generatedValues.contains(value) {
-                consecutiveRetries += 1
-            } else {
-                generatedValues.insert(value)
-                consecutiveRetries = 0
-            }
-        }
-
-        print("Could no longer generate unique values after \(consecutiveRetries) consecutive retries.")
-        print("Final count of unique values: \(generatedValues.count)")
+    func testRepeatableResults() {
+        GeneratorRepeatableResultsTestUtil.confirmRepeatableResults(using: FictionalMineralNameGenerator())
     }
 
 }

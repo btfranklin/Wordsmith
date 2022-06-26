@@ -16,9 +16,9 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/btfranklin/ControlledChaos",
-                    .upToNextMajor(from: "1.1.1")),
+                    .upToNextMajor(from: "1.2.0")),
         .package(url: "https://github.com/btfranklin/StringBooster",
-                    .upToNextMajor(from: "1.0.1")),
+                    .upToNextMajor(from: "1.1.1")),
     ],
     targets: [
         .target(
@@ -30,13 +30,13 @@ let package = Package(
                          package: "StringBooster"),
             ],
             resources: [
-                .process("Base Word Types/Adjectives.json"),
-                .process("Base Word Types/Adverbs.json"),
-                .process("Base Word Types/Nouns.json"),
-                .process("Base Word Types/Verbs.json"),
-                .process("Person Names/Common Female Given Names.json"),
-                .process("Person Names/Common Male Given Names.json"),
-                .process("Person Names/Common Surnames.json"),
+                .process("Assets/Adjectives.json"),
+                .process("Assets/Adverbs.json"),
+                .process("Assets/Nouns.json"),
+                .process("Assets/Verbs.json"),
+                .process("Assets/Common Female Given Names.json"),
+                .process("Assets/Common Male Given Names.json"),
+                .process("Assets/Common Surnames.json"),
             ]),
         .testTarget(
             name: "WordsmithTests",

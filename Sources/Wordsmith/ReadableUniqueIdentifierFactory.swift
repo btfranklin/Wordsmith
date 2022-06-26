@@ -1,23 +1,34 @@
-import Foundation
-
 public class ReadableUniqueIdentifierFactory {
     
     public static let sharedInstance = ReadableUniqueIdentifierFactory()
     
-    private let formatters: [(Int) -> String] = [
-        {
-            "\(Adjective())_\(Noun())_\($0)"
-        },
-        {
-            "\(Adverb())_\(Verb(tense:.presentPerfect))_\($0)"
-        }
-    ]
-    
     private var counter = 0
+
+    public func makeIdentifier(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
+        let readableUniqueIdentifier: String
+
+        if Bool.random(using: &randomNumberGenerator) {
+            readableUniqueIdentifier = TextGenerator(separator: "_") {
+                AdjectiveGenerator()
+                NounGenerator()
+                String(counter)
+            }.makeText()
+
+        } else {
+            readableUniqueIdentifier = TextGenerator(separator: "_") {
+                AdverbGenerator()
+                VerbGenerator(tense: .presentPerfect)
+                String(counter)
+            }.makeText()
+
+        }
+        counter += 1
+
+        return readableUniqueIdentifier
+    }
     
     public func makeIdentifier() -> String {
-        let readableUniqueIdentifier = formatters.randomElement()!(counter)
-        counter += 1
-        return readableUniqueIdentifier
+        var randomNumberGenerator = SystemRandomNumberGenerator()
+        return makeIdentifier(using: &randomNumberGenerator)
     }
 }

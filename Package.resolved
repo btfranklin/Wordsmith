@@ -1,25 +1,23 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "ControlledChaos",
-        "repositoryURL": "https://github.com/btfranklin/ControlledChaos",
-        "state": {
-          "branch": null,
-          "revision": "4b5476d112f2d92f76579e021210073cd9060e14",
-          "version": "1.1.1"
-        }
-      },
-      {
-        "package": "StringBooster",
-        "repositoryURL": "https://github.com/btfranklin/StringBooster",
-        "state": {
-          "branch": null,
-          "revision": "2122994ffded071f7aaa426eadc64013c0a05ef9",
-          "version": "1.0.1"
-        }
+  "pins" : [
+    {
+      "identity" : "controlledchaos",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/btfranklin/ControlledChaos",
+      "state" : {
+        "revision" : "21e9dcfd0e19b9c2ed47ab9924cb2a60a9ff8371",
+        "version" : "1.2.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "stringbooster",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/btfranklin/StringBooster",
+      "state" : {
+        "revision" : "39542345d71c08139f2bfffc234a211becd754f5",
+        "version" : "1.1.1"
+      }
+    }
+  ],
+  "version" : 2
 }

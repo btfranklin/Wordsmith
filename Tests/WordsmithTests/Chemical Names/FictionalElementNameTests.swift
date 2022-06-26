@@ -5,23 +5,16 @@ import XCTest
 
 class FictionalElementNameTests: XCTestCase {
     
+    func testExamples() {
+        GeneratorExamplesTestUtil.printExamples(using: FictionalElementNameGenerator())
+    }
+
     func testUniqueness() {
-        var generatedValues = Set<FictionalElementName>()
-        var consecutiveRetries = 0
-        
-        while consecutiveRetries < 25 {
-            let value = FictionalElementName()
-            
-            if generatedValues.contains(value) {
-                consecutiveRetries += 1
-            } else {
-                generatedValues.insert(value)
-                consecutiveRetries = 0
-            }
-        }
-        
-        print("Could no longer generate unique values after \(consecutiveRetries) consecutive retries.")
-        print("Final count of unique values: \(generatedValues.count)")
+        GeneratorUniquenessTestUtil.countUniqueValuesProduced(using: FictionalElementNameGenerator(), consecutiveRetryLimit: 25)
+    }
+
+    func testRepeatableResults() {
+        GeneratorRepeatableResultsTestUtil.confirmRepeatableResults(using: FictionalElementNameGenerator())
     }
     
 }
