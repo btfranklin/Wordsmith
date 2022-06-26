@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/19/22
 
-public struct FictionalCompoundNameGenerator: TextComponent {
+public struct FictionalCompoundName: TextComponent {
 
     private static let prefixes = [
         "mono", "bi", "di", "tri"
@@ -32,7 +32,7 @@ public struct FictionalCompoundNameGenerator: TextComponent {
         let result: String
 
         if Bool.random(probability: probability, using: &randomNumberGenerator) {
-            result = "\(FictionalCompoundNameGenerator.prefixes.randomElement(using: &randomNumberGenerator)!)\(name)"
+            result = "\(FictionalCompoundName.prefixes.randomElement(using: &randomNumberGenerator)!)\(name)"
         } else {
             result = name
         }
@@ -52,7 +52,7 @@ public struct FictionalCompoundNameGenerator: TextComponent {
     }
 
     public init() {
-        self.components = [FictionalElementNameGenerator(), FictionalElementNameGenerator()]
+        self.components = [FictionalElementName(), FictionalElementName()]
     }
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
@@ -65,17 +65,17 @@ public struct FictionalCompoundNameGenerator: TextComponent {
         let component2 = shuffledComponents[1].makeText(using: &randomNumberGenerator).lowercased()
 
         if component1 == component2 {
-            let convertedName = FictionalCompoundNameGenerator.convertToCompoundForm(component1, using: &randomNumberGenerator)
+            let convertedName = FictionalCompoundName.convertToCompoundForm(component1, using: &randomNumberGenerator)
             text = Bool.random(using: &randomNumberGenerator)
             ? convertedName
-            : "\(FictionalCompoundNameGenerator.prefixes.randomElement(using: &randomNumberGenerator)!)\(convertedName)"
+            : "\(FictionalCompoundName.prefixes.randomElement(using: &randomNumberGenerator)!)\(convertedName)"
 
         } else {
             var word1 = component1
-            var word2 = FictionalCompoundNameGenerator.convertToCompoundForm(component2, using: &randomNumberGenerator)
+            var word2 = FictionalCompoundName.convertToCompoundForm(component2, using: &randomNumberGenerator)
 
-            word1 = FictionalCompoundNameGenerator.maybeAddPrefix(to: word1, probability: 0.25, using: &randomNumberGenerator)
-            word2 = FictionalCompoundNameGenerator.maybeAddPrefix(to: word2, probability: 0.40, using: &randomNumberGenerator)
+            word1 = FictionalCompoundName.maybeAddPrefix(to: word1, probability: 0.25, using: &randomNumberGenerator)
+            word2 = FictionalCompoundName.maybeAddPrefix(to: word2, probability: 0.40, using: &randomNumberGenerator)
 
             text = "\(word1) \(word2)"
         }
