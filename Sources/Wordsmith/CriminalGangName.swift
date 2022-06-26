@@ -2,7 +2,7 @@
 
 import ControlledChaos
 
-public struct CriminalGangNameGenerator: TextComponent {
+public struct CriminalGangName: TextComponent {
 
     public init() {}
 
@@ -42,12 +42,12 @@ public struct CriminalGangNameGenerator: TextComponent {
                 generator = Text(separator: " ") {
                     VillainousPersonNoun(isPlural: true)
                     "of"
-                    TownNameGenerator()
+                    TownName()
                 }
 
             case 4:
                 generator = Text(separator: " ") {
-                    TownNameGenerator()
+                    TownName()
                     VillainousPersonNoun(isPlural: true)
                 }
 
@@ -62,7 +62,7 @@ public struct CriminalGangNameGenerator: TextComponent {
                     Adjective()
                     VillainousPersonNoun(isPlural: true)
                     "of"
-                    TownNameGenerator()
+                    TownName()
                 }
             }
 

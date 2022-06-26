@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct NauticalShipNameGenerator: TextComponent {
+public struct NauticalShipName: TextComponent {
 
     public init() {}
 
@@ -15,10 +15,10 @@ public struct NauticalShipNameGenerator: TextComponent {
             generator = MartialSocialConcept().firstUppercased()
 
         case 8:
-            generator = TownNameGenerator()
+            generator = TownName()
 
         case 9:
-            generator = WeirdNameGenerator(syllableCount: 3)
+            generator = WeirdName(syllableCount: 3)
 
         case 10:
             generator = NauticalShipNameObject().firstUppercased()
@@ -52,7 +52,7 @@ public struct NauticalShipNameGenerator: TextComponent {
 
         case 16:
             generator = Text(separator: " ") {
-                TownNameGenerator()
+                TownName()
                 Bool.random(probability: 0.85, using: &randomNumberGenerator)
                 ? NauticalShipNameObject() as TextComponent
                 : PrimitiveWeapon() as TextComponent
@@ -67,7 +67,7 @@ public struct NauticalShipNameGenerator: TextComponent {
                 "of"
                 Bool.random(using: &randomNumberGenerator)
                 ? MartialSocialConcept().firstUppercased()
-                : TownNameGenerator()
+                : TownName()
             }
 
         default:

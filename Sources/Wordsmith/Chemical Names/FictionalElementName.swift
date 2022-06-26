@@ -10,8 +10,8 @@ public struct FictionalElementName: TextComponent {
         let rootWord = OneOf {
             GivenName()
             Surname()
-            WeirdNameGenerator(syllableCount: 2, allowHyphen: false, allowApostrophe: false)
-            WeirdNameGenerator(syllableCount: 3, allowHyphen: false, allowApostrophe: false)
+            WeirdName(syllableCount: 2, allowHyphen: false, allowApostrophe: false)
+            WeirdName(syllableCount: 3, allowHyphen: false, allowApostrophe: false)
         }.makeText(using: &randomNumberGenerator).lowercased()
 
         let rootWordLastLetter = rootWord.last!

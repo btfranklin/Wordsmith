@@ -9,7 +9,7 @@ public struct FictionalMineralName: TextComponent {
 
         let rootWord = OneOf {
             GivenName()
-            WeirdNameGenerator(syllableCount: 2, allowHyphen: false, allowApostrophe: false)
+            WeirdName(syllableCount: 2, allowHyphen: false, allowApostrophe: false)
         }.makeText(using: &randomNumberGenerator).lowercased()
 
         let rootWordLastLetter = rootWord.last!

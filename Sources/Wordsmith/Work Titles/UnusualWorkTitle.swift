@@ -26,7 +26,7 @@ public struct UnusualWorkTitle: TextComponent {
                     UCBerkeleyEmotion()
                 }
                 "in"
-                TownNameGenerator()
+                TownName()
             }
 
             Text(separator: " ") {

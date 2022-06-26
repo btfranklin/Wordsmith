@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/12/22
 
-public struct WeirdNameGenerator: TextComponent {
+public struct WeirdName: TextComponent {
 
     static let openEndedSyllables = [
         "a", "ba", "be", "bi", "bo", "bu", "by", "ca", "cha", "che", "chi", "co", "cho", "chu", "chy", "da", "de", "di", "do", "du", "dy",
@@ -42,7 +42,7 @@ public struct WeirdNameGenerator: TextComponent {
 
         var text = ""
         for currentSyllable in 1...syllableCount {
-            text += WeirdNameGenerator.openEndedSyllables.randomElement(using: &randomNumberGenerator)!
+            text += WeirdName.openEndedSyllables.randomElement(using: &randomNumberGenerator)!
 
             if currentSyllable == apostropheSyllable {
                 text += "'"
@@ -52,7 +52,7 @@ public struct WeirdNameGenerator: TextComponent {
         }
 
         if Bool.random(using: &randomNumberGenerator) {
-            text += WeirdNameGenerator.endingSounds.randomElement(using: &randomNumberGenerator)!
+            text += WeirdName.endingSounds.randomElement(using: &randomNumberGenerator)!
         }
 
         return text.firstUppercased

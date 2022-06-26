@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/12/22
 
-public struct BandNameGenerator: TextComponent {
+public struct BandName: TextComponent {
 
     public init() {}
 

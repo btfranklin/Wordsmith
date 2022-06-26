@@ -21,13 +21,13 @@ public struct SimpleWorkTitle: TextComponent {
 
             PersonName()
 
-            TownNameGenerator()
+            TownName()
 
             UCBerkeleyEmotion()
 
             UCBerkeleyEmotion().prefixedByDeterminer()
 
-            CriminalGangNameGenerator()
+            CriminalGangName()
 
             Text(separator: " ") {
                 OneOf {
@@ -35,7 +35,7 @@ public struct SimpleWorkTitle: TextComponent {
                     MartialSocialConcept()
                 }
                 "in"
-                TownNameGenerator()
+                TownName()
             }
 
             Text(separator: " ") {
@@ -105,7 +105,7 @@ public struct SimpleWorkTitle: TextComponent {
                 "of the"
                 Text {
                     "'"
-                    NauticalShipNameGenerator()
+                    NauticalShipName()
                     "'"
                 }
             }
@@ -137,7 +137,7 @@ public struct SimpleWorkTitle: TextComponent {
                     "in"
                     "of"
                 }
-                TownNameGenerator()
+                TownName()
             }
 
         }.titleCased().makeText(using: &randomNumberGenerator)

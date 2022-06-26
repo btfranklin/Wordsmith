@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/12/22
 
-public struct TownNameGenerator: TextComponent {
+public struct TownName: TextComponent {
 
     static let nameRarePrefixWords = [
         "Saint", "Mount", "Lake"
@@ -31,24 +31,24 @@ public struct TownNameGenerator: TextComponent {
         case 1...9:
             generator = Text(separator: " ") {
                 Surname()
-                TownNameGenerator.nameSuffixWords.randomElement(using: &randomNumberGenerator)!
+                TownName.nameSuffixWords.randomElement(using: &randomNumberGenerator)!
             }
 
         case 10...19:
             generator = Text(separator: " ") {
-                TownNameGenerator.namePrefixWords.randomElement(using: &randomNumberGenerator)!
+                TownName.namePrefixWords.randomElement(using: &randomNumberGenerator)!
                 Surname()
             }
 
         case 20...24:
             generator = Text(separator: " ") {
                 Surname()
-                TownNameGenerator.nameRareSuffixWords.randomElement(using: &randomNumberGenerator)!
+                TownName.nameRareSuffixWords.randomElement(using: &randomNumberGenerator)!
             }
 
         case 25...29:
             generator = Text(separator: " ") {
-                TownNameGenerator.nameRarePrefixWords.randomElement(using: &randomNumberGenerator)!
+                TownName.nameRarePrefixWords.randomElement(using: &randomNumberGenerator)!
                 Surname()
             }
 
@@ -57,26 +57,26 @@ public struct TownNameGenerator: TextComponent {
                 "New"
                 Text {
                     Surname()
-                    TownNameGenerator.nameSuffixes.randomElement(using: &randomNumberGenerator)!
+                    TownName.nameSuffixes.randomElement(using: &randomNumberGenerator)!
                 }
             }
 
         case 32...35:
             generator = Text(separator: " ") {
                 LocationAdjective().firstUppercased()
-                TownNameGenerator.nameSuffixWords.randomElement(using: &randomNumberGenerator)!
+                TownName.nameSuffixWords.randomElement(using: &randomNumberGenerator)!
             }
 
         case 36...38:
             generator = Text(separator: " ") {
                 LocationAdjective().firstUppercased()
-                TownNameGenerator.nameRareSuffixWords.randomElement(using: &randomNumberGenerator)!
+                TownName.nameRareSuffixWords.randomElement(using: &randomNumberGenerator)!
             }
 
         default:
             generator = Text {
                 Surname()
-                TownNameGenerator.nameSuffixes.randomElement(using: &randomNumberGenerator)!
+                TownName.nameSuffixes.randomElement(using: &randomNumberGenerator)!
             }
         }
 
