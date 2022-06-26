@@ -9,40 +9,40 @@ public struct BandName: TextComponent {
 
             Text(separator: " ") {
                 "The"
-                Adjective().capitalized()
+                Adjective()
             }
 
             Text(separator: " ") {
                 "The"
-                Noun().capitalized()
+                Noun()
             }
 
             Text(separator: " ") {
                 "The"
-                Noun(isPlural: true).capitalized()
+                Noun(isPlural: true)
             }
 
             Text(separator: " ") {
                 Adjective()
                 Noun()
-            }.capitalized()
+            }
 
             Text(separator: " ") {
                 "The"
                 Adjective()
                 Noun(isPlural: true)
-            }.capitalized()
+            }
 
             Text(separator: " ") {
                 GivenName()
                 "and the"
-                Noun(isPlural: true).capitalized()
+                Noun(isPlural: true)
             }
 
             Text(separator: " ") {
                 GivenName().possessiveForm()
-                Noun(isPlural: true).capitalized()
+                Noun(isPlural: true)
             }
-        }.makeText(using: &randomNumberGenerator)
+        }.titleCased().makeText(using: &randomNumberGenerator)
     }
 }
