@@ -4,7 +4,7 @@
 
 enum GeneratorExamplesTestUtil {
 
-    static func printExamples(using generator: some TextGeneratorComponent, count: Int = 10) {
+    static func printExamples(using generator: some TextComponent, count: Int = 10) {
         for _ in 1...count {
             print(generator.makeText())
         }

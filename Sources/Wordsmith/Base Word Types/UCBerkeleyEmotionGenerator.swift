@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct UCBerkeleyEmotionGenerator: TextGeneratorComponent {
+public struct UCBerkeleyEmotionGenerator: TextComponent {
 
     private static let options: [String] = [
         "admiration",

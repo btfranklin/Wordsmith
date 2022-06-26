@@ -2,7 +2,7 @@
 
 import Foundation
 
-public struct GivenNameGenerator: TextGeneratorComponent {
+public struct GivenNameGenerator: TextComponent {
 
     static let maleNameOptions: [String] = {
         let decoder = JSONDecoder()

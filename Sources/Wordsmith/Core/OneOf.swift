@@ -1,10 +1,10 @@
 //  Created by B.T. Franklin on 6/18/22
 
-public struct OneOf: TextGeneratorComponent {
+public struct OneOf: TextComponent {
 
-    private let options: [TextGeneratorComponent]
+    private let options: [TextComponent]
 
-    public init(@TextGeneratorBuilder _ optionsClosure: () -> [TextGeneratorComponent]) {
+    public init(@TextBuilder _ optionsClosure: () -> [TextComponent]) {
         let options = optionsClosure()
         guard !options.isEmpty else {
             fatalError("OneOf must be initialized with non-empty options")

@@ -2,7 +2,7 @@
 
 import Foundation
 
-public struct AdverbGenerator: TextGeneratorComponent {
+public struct AdverbGenerator: TextComponent {
 
     private static let options: [String] = {
         let decoder = JSONDecoder()

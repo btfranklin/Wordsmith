@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/19/22
 
-public struct FictionalCompoundNameGenerator: TextGeneratorComponent {
+public struct FictionalCompoundNameGenerator: TextComponent {
 
     private static let prefixes = [
         "mono", "bi", "di", "tri"
@@ -40,9 +40,9 @@ public struct FictionalCompoundNameGenerator: TextGeneratorComponent {
         return result
     }
 
-    private let components: [TextGeneratorComponent]
+    private let components: [TextComponent]
 
-    public init(@TextGeneratorBuilder _ componentsClosure: () -> [TextGeneratorComponent]) {
+    public init(@TextBuilder _ componentsClosure: () -> [TextComponent]) {
         let components = componentsClosure()
         guard components.count == 2 else {
             fatalError("Can only create a compound with two components (or none)")

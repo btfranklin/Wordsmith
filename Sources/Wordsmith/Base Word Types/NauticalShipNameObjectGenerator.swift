@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct NauticalShipNameObjectGenerator: TextGeneratorComponent {
+public struct NauticalShipNameObjectGenerator: TextComponent {
 
     private static let options: [String] = [
         "blade",

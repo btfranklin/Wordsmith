@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/18/22
 
-public struct SimpleWorkTitleGenerator: TextGeneratorComponent {
+public struct SimpleWorkTitleGenerator: TextComponent {
 
     public init() {}
 
@@ -29,7 +29,7 @@ public struct SimpleWorkTitleGenerator: TextGeneratorComponent {
 
             CriminalGangNameGenerator()
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 OneOf {
                     UCBerkeleyEmotionGenerator()
                     MartialSocialConceptGenerator()
@@ -38,43 +38,43 @@ public struct SimpleWorkTitleGenerator: TextGeneratorComponent {
                 TownNameGenerator()
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 AdjectiveGenerator()
                 VerbGenerator(tense: .presentPerfect)
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 TimeOfDayGenerator()
                 VerbGenerator(tense: .present)
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 TimeOfDayGenerator()
                 NounGenerator(isPlural: Bool.random(using: &randomNumberGenerator))
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 AdjectiveGenerator()
                 NounGenerator(isPlural: Bool.random(using: &randomNumberGenerator))
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 AdjectiveGenerator().prefixedByArticle()
                 NounGenerator()
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 AdjectiveGenerator().prefixedByDeterminer()
                 NounGenerator()
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 MartialSocialConceptGenerator()
                 "and"
                 MartialSocialConceptGenerator()
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 OneOf {
                     "A Treatise on"
                     "On"
@@ -89,7 +89,7 @@ public struct SimpleWorkTitleGenerator: TextGeneratorComponent {
                 }
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 "The"
                 Maybe {
                     AdjectiveGenerator()
@@ -103,14 +103,14 @@ public struct SimpleWorkTitleGenerator: TextGeneratorComponent {
                     "Voyage"
                 }
                 "of the"
-                TextGenerator {
+                Text {
                     "'"
                     NauticalShipNameGenerator()
                     "'"
                 }
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 "The"
                 Maybe {
                     AdjectiveGenerator()
@@ -127,7 +127,7 @@ public struct SimpleWorkTitleGenerator: TextGeneratorComponent {
                 PersonNameGenerator()
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 "The"
                 Maybe {
                     AdjectiveGenerator()

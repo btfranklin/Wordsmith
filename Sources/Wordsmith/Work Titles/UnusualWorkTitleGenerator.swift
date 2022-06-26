@@ -1,25 +1,25 @@
 //  Created by B.T. Franklin on 6/20/22
 
-public struct UnusualWorkTitleGenerator: TextGeneratorComponent {
+public struct UnusualWorkTitleGenerator: TextComponent {
 
     public init() {}
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
         OneOf {
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 UCBerkeleyEmotionGenerator()
                 AdverbGenerator()
                 VerbGenerator(tense: .present)
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 UCBerkeleyEmotionGenerator()
                 "and"
                 UCBerkeleyEmotionGenerator()
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 UCBerkeleyEmotionGenerator()
                 Maybe {
                     "and "
@@ -29,8 +29,8 @@ public struct UnusualWorkTitleGenerator: TextGeneratorComponent {
                 TownNameGenerator()
             }
 
-            TextGenerator(separator: " ") {
-                TextGenerator {
+            Text(separator: " ") {
+                Text {
                     "'"
                     SimpleWorkTitleGenerator()
                     "'"
@@ -45,12 +45,12 @@ public struct UnusualWorkTitleGenerator: TextGeneratorComponent {
                 }
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 VerbGenerator(tense:.presentPerfect)
                 NounGenerator().prefixedByDeterminer()
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 OneOf {
                     "When"
                     "Where"
@@ -64,7 +64,7 @@ public struct UnusualWorkTitleGenerator: TextGeneratorComponent {
                 VerbGenerator(tense:.present)
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 OneOf {
                     "When"
                     "Where"
@@ -77,28 +77,28 @@ public struct UnusualWorkTitleGenerator: TextGeneratorComponent {
 
                 OneOf {
                     OneOf {
-                        TextGenerator(separator: " ") {
+                        Text(separator: " ") {
                             PronounGenerator(isSingular: false, isThirdPerson: Bool.random(using: &randomNumberGenerator))
                             VerbGenerator(tense: .base)
                         }
-                        TextGenerator(separator: " ") {
+                        Text(separator: " ") {
                             PronounGenerator(isSingular: true, isThirdPerson: false)
                             VerbGenerator(tense: .base)
                         }
-                        TextGenerator(separator: " ") {
+                        Text(separator: " ") {
                             PronounGenerator(isSingular: true, isThirdPerson: true)
                             VerbGenerator(tense: .present)
                         }
                     }
 
-                    TextGenerator(separator: " ") {
+                    Text(separator: " ") {
                         PronounGenerator(isSingular: Bool.random(using: &randomNumberGenerator), isThirdPerson: Bool.random(using: &randomNumberGenerator))
                         VerbGenerator(tense: .past)
                     }
                 }
             }
 
-            TextGenerator {
+            Text {
                 AdjectiveGenerator()
                 Maybe {
                     ", "
@@ -109,12 +109,12 @@ public struct UnusualWorkTitleGenerator: TextGeneratorComponent {
                 AdjectiveGenerator()
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 NounGenerator().prefixedByDeterminer()
                 OneOf {
                     VerbGenerator(tense: .present)
 
-                    TextGenerator(separator: " ") {
+                    Text(separator: " ") {
                         OneOf {
                             "Will"
                             "Shall"
@@ -125,12 +125,12 @@ public struct UnusualWorkTitleGenerator: TextGeneratorComponent {
                         VerbGenerator()
                     }
 
-                    TextGenerator(separator: " ") {
+                    Text(separator: " ") {
                         "Is"
                         VerbGenerator(tense:.presentPerfect)
                     }
 
-                    TextGenerator(separator: " ") {
+                    Text(separator: " ") {
                         "Has"
                         VerbGenerator(tense:.pastParticiple)
                     }
@@ -138,12 +138,12 @@ public struct UnusualWorkTitleGenerator: TextGeneratorComponent {
             }
 
             OneOf {
-                TextGenerator(separator: " ") {
+                Text(separator: " ") {
                     NounGenerator()
                     "and"
                     NounGenerator()
                 }
-                TextGenerator(separator: " ") {
+                Text(separator: " ") {
                     NounGenerator().prefixedByDeterminer()
                     "and"
                     NounGenerator().prefixedByDeterminer()

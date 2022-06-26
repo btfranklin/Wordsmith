@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct PronounGenerator: TextGeneratorComponent {
+public struct PronounGenerator: TextComponent {
 
     private let isSingular: Bool
     private let isThirdPerson: Bool

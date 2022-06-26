@@ -2,17 +2,17 @@
 
 import ControlledChaos
 
-public struct Maybe: TextGeneratorComponent {
+public struct Maybe: TextComponent {
 
-    private let option: TextGeneratorComponent
+    private let option: TextComponent
     private let probability: Double
 
     public init(probability: Double = 0.5,
-         @TextGeneratorBuilder _ optionsClosure: () -> [TextGeneratorComponent]) {
+         @TextBuilder _ optionsClosure: () -> [TextComponent]) {
 
         self.probability = probability
 
-        option = TextGenerator {
+        option = Text {
             optionsClosure()
         }
     }

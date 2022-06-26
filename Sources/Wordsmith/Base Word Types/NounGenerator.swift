@@ -2,7 +2,7 @@
 
 import Foundation
 
-public struct NounGenerator: TextGeneratorComponent {
+public struct NounGenerator: TextComponent {
 
     private static let options: [String] = {
         let decoder = JSONDecoder()

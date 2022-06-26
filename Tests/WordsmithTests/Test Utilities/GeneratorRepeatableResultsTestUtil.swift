@@ -6,7 +6,7 @@ import ControlledChaos
 
 enum GeneratorRepeatableResultsTestUtil {
 
-    static func confirmRepeatableResults(using generator: some TextGeneratorComponent, comparedResultsCount: Int = 100) {
+    static func confirmRepeatableResults(using generator: some TextComponent, comparedResultsCount: Int = 100) {
         let seedState = UInt64.random(in: UInt64.min...UInt64.max)
         
         var seededRNG = SeededRandomNumberGenerator(state: seedState)

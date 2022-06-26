@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct LocationAdjectiveGenerator: TextGeneratorComponent {
+public struct LocationAdjectiveGenerator: TextComponent {
 
     private static let options: [String] = [
         "ancient",

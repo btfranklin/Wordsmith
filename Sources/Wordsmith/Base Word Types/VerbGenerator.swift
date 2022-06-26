@@ -2,7 +2,7 @@
 
 import Foundation
 
-public struct VerbGenerator: TextGeneratorComponent {
+public struct VerbGenerator: TextComponent {
 
     public enum Tense: Int {
         case base

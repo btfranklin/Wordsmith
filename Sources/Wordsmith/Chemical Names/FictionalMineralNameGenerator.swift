@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/18/22
 
-public struct FictionalMineralNameGenerator: TextGeneratorComponent {
+public struct FictionalMineralNameGenerator: TextComponent {
 
     public init() {}
 

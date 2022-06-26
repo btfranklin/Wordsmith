@@ -4,7 +4,7 @@
 
 enum GeneratorUniquenessTestUtil {
 
-    static func countUniqueValuesProduced(using generator: some TextGeneratorComponent, consecutiveRetryLimit: Int = 10) {
+    static func countUniqueValuesProduced(using generator: some TextComponent, consecutiveRetryLimit: Int = 10) {
         var generatedValues = Set<String>()
         var consecutiveRetries = 0
 

@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct TimeOfDayGenerator: TextGeneratorComponent {
+public struct TimeOfDayGenerator: TextComponent {
 
     private static let options: [String] = [
         "midnight",

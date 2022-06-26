@@ -1,45 +1,45 @@
 //  Created by B.T. Franklin on 6/12/22
 
-public struct BandNameGenerator: TextGeneratorComponent {
+public struct BandNameGenerator: TextComponent {
 
     public init() {}
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
         OneOf {
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 "The"
                 AdjectiveGenerator().capitalized()
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 "The"
                 NounGenerator().capitalized()
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 "The"
                 NounGenerator(isPlural: true).capitalized()
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 AdjectiveGenerator()
                 NounGenerator()
             }.capitalized()
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 "The"
                 AdjectiveGenerator()
                 NounGenerator(isPlural: true)
             }.capitalized()
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 GivenNameGenerator()
                 "and the"
                 NounGenerator(isPlural: true).capitalized()
             }
 
-            TextGenerator(separator: " ") {
+            Text(separator: " ") {
                 GivenNameGenerator().possessiveForm()
                 NounGenerator(isPlural: true).capitalized()
             }

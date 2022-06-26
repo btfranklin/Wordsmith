@@ -1,11 +1,11 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct TextGenerator: TextGeneratorComponent {
+public struct Text: TextComponent {
 
-    private let components: [TextGeneratorComponent]
+    private let components: [TextComponent]
     private let separator: String
 
-    public init(separator: String = "", @TextGeneratorBuilder _ componentsClosure: () -> [TextGeneratorComponent]) {
+    public init(separator: String = "", @TextBuilder _ componentsClosure: () -> [TextComponent]) {
         self.separator = separator
         self.components = componentsClosure()
     }

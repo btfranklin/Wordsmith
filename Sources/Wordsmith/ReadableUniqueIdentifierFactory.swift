@@ -8,14 +8,14 @@ public class ReadableUniqueIdentifierFactory {
         let readableUniqueIdentifier: String
 
         if Bool.random(using: &randomNumberGenerator) {
-            readableUniqueIdentifier = TextGenerator(separator: "_") {
+            readableUniqueIdentifier = Text(separator: "_") {
                 AdjectiveGenerator()
                 NounGenerator()
                 String(counter)
             }.makeText()
 
         } else {
-            readableUniqueIdentifier = TextGenerator(separator: "_") {
+            readableUniqueIdentifier = Text(separator: "_") {
                 AdverbGenerator()
                 VerbGenerator(tense: .presentPerfect)
                 String(counter)

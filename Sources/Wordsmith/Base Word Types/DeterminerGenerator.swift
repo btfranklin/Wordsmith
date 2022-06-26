@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct DeterminerGenerator: TextGeneratorComponent {
+public struct DeterminerGenerator: TextComponent {
 
     private static let options: [String] = [
         "a",

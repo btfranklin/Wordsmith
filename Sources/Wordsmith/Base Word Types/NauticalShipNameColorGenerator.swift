@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct NauticalShipNameColorGenerator: TextGeneratorComponent {
+public struct NauticalShipNameColorGenerator: TextComponent {
 
     private static let options: [String] = [
         "amber",

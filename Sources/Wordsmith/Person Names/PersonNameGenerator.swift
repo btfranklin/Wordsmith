@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/12/22
 
-public struct PersonNameGenerator: TextGeneratorComponent {
+public struct PersonNameGenerator: TextComponent {
 
     public let gender: BinaryGender?
 
@@ -9,7 +9,7 @@ public struct PersonNameGenerator: TextGeneratorComponent {
     }
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
-        TextGenerator(separator: " ") {
+        Text(separator: " ") {
             GivenNameGenerator(gender: gender)
             SurnameGenerator()
         }.makeText(using: &randomNumberGenerator)

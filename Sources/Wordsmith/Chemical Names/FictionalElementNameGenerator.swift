@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/19/22
 
-public struct FictionalElementNameGenerator: TextGeneratorComponent {
+public struct FictionalElementNameGenerator: TextComponent {
 
     public init() {}
 
