@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/18/22
 
-public struct SimpleWorkTitleGenerator: TextComponent {
+public struct SimpleWorkTitle: TextComponent {
 
     public init() {}
 

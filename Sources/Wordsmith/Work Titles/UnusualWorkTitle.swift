@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/20/22
 
-public struct UnusualWorkTitleGenerator: TextComponent {
+public struct UnusualWorkTitle: TextComponent {
 
     public init() {}
 
@@ -32,7 +32,7 @@ public struct UnusualWorkTitleGenerator: TextComponent {
             Text(separator: " ") {
                 Text {
                     "'"
-                    SimpleWorkTitleGenerator()
+                    SimpleWorkTitle()
                     "'"
                 }
                 OneOf {
