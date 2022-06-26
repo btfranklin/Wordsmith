@@ -10,7 +10,7 @@ public struct PrefixedByDeterminerText: TextComponent {
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
         let text = wrappedTextComponent.makeText(using: &randomNumberGenerator)
-        let determiner = DeterminerGenerator(isBeforeVowel: text.startsWithVowel).makeText(using: &randomNumberGenerator)
+        let determiner = Determiner(isBeforeVowel: text.startsWithVowel).makeText(using: &randomNumberGenerator)
         return "\(determiner) \(text)"
     }
 }

@@ -12,7 +12,7 @@ public struct NauticalShipNameGenerator: TextComponent {
             generator = GivenNameGenerator(gender: .female)
 
         case 5...7:
-            generator = MartialSocialConceptGenerator().firstUppercased()
+            generator = MartialSocialConcept().firstUppercased()
 
         case 8:
             generator = TownNameGenerator()
@@ -21,69 +21,69 @@ public struct NauticalShipNameGenerator: TextComponent {
             generator = WeirdNameGenerator(syllableCount: 3)
 
         case 10:
-            generator = NauticalShipNameObjectGenerator().firstUppercased()
+            generator = NauticalShipNameObject().firstUppercased()
 
         case 11:
-            generator = ShipNameAdjectiveGenerator().firstUppercased()
+            generator = ShipNameAdjective().firstUppercased()
 
         case 12:
             generator = Text(separator: " ") {
-                NauticalShipNameColorGenerator()
+                NauticalShipNameColor()
                 Bool.random(probability: 0.75, using: &randomNumberGenerator)
-                ? NauticalShipNameObjectGenerator() as TextComponent
-                : PrimitiveWeaponGenerator() as TextComponent
+                ? NauticalShipNameObject() as TextComponent
+                : PrimitiveWeapon() as TextComponent
             }.capitalized()
 
         case 13...14:
             generator = Text(separator: " ") {
-                ShipNameAdjectiveGenerator()
+                ShipNameAdjective()
                 Bool.random(probability: 0.85, using: &randomNumberGenerator)
-                ? NauticalShipNameObjectGenerator() as TextComponent
-                : PrimitiveWeaponGenerator() as TextComponent
+                ? NauticalShipNameObject() as TextComponent
+                : PrimitiveWeapon() as TextComponent
             }.capitalized()
 
         case 15:
             generator = Text(separator: " ") {
-                TimeOfDayGenerator()
+                TimeOfDay()
                 Bool.random(probability: 0.75, using: &randomNumberGenerator)
-                ? MartialSocialConceptGenerator() as TextComponent
-                : PrimitiveWeaponGenerator() as TextComponent
+                ? MartialSocialConcept() as TextComponent
+                : PrimitiveWeapon() as TextComponent
             }.capitalized()
 
         case 16:
             generator = Text(separator: " ") {
                 TownNameGenerator()
                 Bool.random(probability: 0.85, using: &randomNumberGenerator)
-                ? NauticalShipNameObjectGenerator() as TextComponent
-                : PrimitiveWeaponGenerator() as TextComponent
+                ? NauticalShipNameObject() as TextComponent
+                : PrimitiveWeapon() as TextComponent
             }.capitalized()
 
         case 17:
             generator = Text(separator: " ") {
                 (Bool.random(using: &randomNumberGenerator)
-                 ? NauticalShipNameObjectGenerator() as TextComponent
-                 : PrimitiveWeaponGenerator()
+                 ? NauticalShipNameObject() as TextComponent
+                 : PrimitiveWeapon()
                 ).firstUppercased()
                 "of"
                 Bool.random(using: &randomNumberGenerator)
-                ? MartialSocialConceptGenerator().firstUppercased()
+                ? MartialSocialConcept().firstUppercased()
                 : TownNameGenerator()
             }
 
         default:
             generator = Text(separator: " ") {
                 (Bool.random(probability: 0.33, using: &randomNumberGenerator)
-                 ? MartialSocialConceptGenerator().firstUppercased()
+                 ? MartialSocialConcept().firstUppercased()
                  : GivenNameGenerator(gender: Bool.random(probability: 0.75, using: &randomNumberGenerator) ? .female : .male)
                 ).possessiveForm()
                 Text {
                     if Bool.random(using: &randomNumberGenerator) {
                         (Bool.random(using: &randomNumberGenerator)
-                         ? NauticalShipNameObjectGenerator() as TextComponent
-                         : PrimitiveWeaponGenerator()
+                         ? NauticalShipNameObject() as TextComponent
+                         : PrimitiveWeapon()
                         )
                     } else {
-                        MartialSocialConceptGenerator()
+                        MartialSocialConcept()
                     }
                 }.firstUppercased()
             }

@@ -2,7 +2,7 @@
 
 import Foundation
 
-public struct VerbGenerator: TextComponent {
+public struct Verb: TextComponent {
 
     public enum Tense: Int {
         case base
@@ -25,14 +25,14 @@ public struct VerbGenerator: TextComponent {
         return verbs
     }()
 
-    private let tense: VerbGenerator.Tense
+    private let tense: Verb.Tense
 
-    public init(tense: VerbGenerator.Tense = .base) {
+    public init(tense: Verb.Tense = .base) {
         self.tense = tense
     }
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
-        let verbRow = VerbGenerator.options.randomElement(using: &randomNumberGenerator)!
+        let verbRow = Verb.options.randomElement(using: &randomNumberGenerator)!
         let tenseIndex = tense.rawValue
         return verbRow[tenseIndex]
     }

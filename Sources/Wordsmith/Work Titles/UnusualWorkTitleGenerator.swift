@@ -8,22 +8,22 @@ public struct UnusualWorkTitleGenerator: TextComponent {
         OneOf {
 
             Text(separator: " ") {
-                UCBerkeleyEmotionGenerator()
-                AdverbGenerator()
-                VerbGenerator(tense: .present)
+                UCBerkeleyEmotion()
+                Adverb()
+                Verb(tense: .present)
             }
 
             Text(separator: " ") {
-                UCBerkeleyEmotionGenerator()
+                UCBerkeleyEmotion()
                 "and"
-                UCBerkeleyEmotionGenerator()
+                UCBerkeleyEmotion()
             }
 
             Text(separator: " ") {
-                UCBerkeleyEmotionGenerator()
+                UCBerkeleyEmotion()
                 Maybe {
                     "and "
-                    UCBerkeleyEmotionGenerator()
+                    UCBerkeleyEmotion()
                 }
                 "in"
                 TownNameGenerator()
@@ -46,8 +46,8 @@ public struct UnusualWorkTitleGenerator: TextComponent {
             }
 
             Text(separator: " ") {
-                VerbGenerator(tense:.presentPerfect)
-                NounGenerator().prefixedByDeterminer()
+                Verb(tense:.presentPerfect)
+                Noun().prefixedByDeterminer()
             }
 
             Text(separator: " ") {
@@ -60,8 +60,8 @@ public struct UnusualWorkTitleGenerator: TextComponent {
                     "Until"
                     "Because"
                 }
-                NounGenerator().prefixedByArticle()
-                VerbGenerator(tense:.present)
+                Noun().prefixedByArticle()
+                Verb(tense:.present)
             }
 
             Text(separator: " ") {
@@ -78,41 +78,41 @@ public struct UnusualWorkTitleGenerator: TextComponent {
                 OneOf {
                     OneOf {
                         Text(separator: " ") {
-                            PronounGenerator(isSingular: false, isThirdPerson: Bool.random(using: &randomNumberGenerator))
-                            VerbGenerator(tense: .base)
+                            Pronoun(isSingular: false, isThirdPerson: Bool.random(using: &randomNumberGenerator))
+                            Verb(tense: .base)
                         }
                         Text(separator: " ") {
-                            PronounGenerator(isSingular: true, isThirdPerson: false)
-                            VerbGenerator(tense: .base)
+                            Pronoun(isSingular: true, isThirdPerson: false)
+                            Verb(tense: .base)
                         }
                         Text(separator: " ") {
-                            PronounGenerator(isSingular: true, isThirdPerson: true)
-                            VerbGenerator(tense: .present)
+                            Pronoun(isSingular: true, isThirdPerson: true)
+                            Verb(tense: .present)
                         }
                     }
 
                     Text(separator: " ") {
-                        PronounGenerator(isSingular: Bool.random(using: &randomNumberGenerator), isThirdPerson: Bool.random(using: &randomNumberGenerator))
-                        VerbGenerator(tense: .past)
+                        Pronoun(isSingular: Bool.random(using: &randomNumberGenerator), isThirdPerson: Bool.random(using: &randomNumberGenerator))
+                        Verb(tense: .past)
                     }
                 }
             }
 
             Text {
-                AdjectiveGenerator()
+                Adjective()
                 Maybe {
                     ", "
-                    AdjectiveGenerator()
+                    Adjective()
                     ","
                 }
                 " and "
-                AdjectiveGenerator()
+                Adjective()
             }
 
             Text(separator: " ") {
-                NounGenerator().prefixedByDeterminer()
+                Noun().prefixedByDeterminer()
                 OneOf {
-                    VerbGenerator(tense: .present)
+                    Verb(tense: .present)
 
                     Text(separator: " ") {
                         OneOf {
@@ -122,31 +122,31 @@ public struct UnusualWorkTitleGenerator: TextComponent {
                             "Must"
                             "May"
                         }
-                        VerbGenerator()
+                        Verb()
                     }
 
                     Text(separator: " ") {
                         "Is"
-                        VerbGenerator(tense:.presentPerfect)
+                        Verb(tense:.presentPerfect)
                     }
 
                     Text(separator: " ") {
                         "Has"
-                        VerbGenerator(tense:.pastParticiple)
+                        Verb(tense:.pastParticiple)
                     }
                 }
             }
 
             OneOf {
                 Text(separator: " ") {
-                    NounGenerator()
+                    Noun()
                     "and"
-                    NounGenerator()
+                    Noun()
                 }
                 Text(separator: " ") {
-                    NounGenerator().prefixedByDeterminer()
+                    Noun().prefixedByDeterminer()
                     "and"
-                    NounGenerator().prefixedByDeterminer()
+                    Noun().prefixedByDeterminer()
                 }
             }
 

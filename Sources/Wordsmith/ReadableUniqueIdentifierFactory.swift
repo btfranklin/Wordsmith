@@ -9,15 +9,15 @@ public class ReadableUniqueIdentifierFactory {
 
         if Bool.random(using: &randomNumberGenerator) {
             readableUniqueIdentifier = Text(separator: "_") {
-                AdjectiveGenerator()
-                NounGenerator()
+                Adjective()
+                Noun()
                 String(counter)
             }.makeText()
 
         } else {
             readableUniqueIdentifier = Text(separator: "_") {
-                AdverbGenerator()
-                VerbGenerator(tense: .presentPerfect)
+                Adverb()
+                Verb(tense: .presentPerfect)
                 String(counter)
             }.makeText()
 

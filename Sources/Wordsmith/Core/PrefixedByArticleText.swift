@@ -12,7 +12,7 @@ public struct PrefixedByArticleText: TextComponent {
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
         let text = wrappedTextComponent.makeText(using: &randomNumberGenerator)
-        let article = ArticleGenerator(isBeforeVowel: text.startsWithVowel).makeText(using: &randomNumberGenerator)
+        let article = Article(isBeforeVowel: text.startsWithVowel).makeText(using: &randomNumberGenerator)
         return "\(article) \(text)"
     }
 }

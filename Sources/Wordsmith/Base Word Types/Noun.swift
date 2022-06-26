@@ -2,7 +2,7 @@
 
 import Foundation
 
-public struct NounGenerator: TextComponent {
+public struct Noun: TextComponent {
 
     private static let options: [String] = {
         let decoder = JSONDecoder()
@@ -24,7 +24,7 @@ public struct NounGenerator: TextComponent {
     }
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
-        var value = NounGenerator.options.randomElement(using: &randomNumberGenerator)!
+        var value = Noun.options.randomElement(using: &randomNumberGenerator)!
 
         if isPlural {
             if value.hasSuffix("ay") || value.hasSuffix("ey") || value.hasSuffix("iy") || value.hasSuffix("oy") || value.hasSuffix("uy") {

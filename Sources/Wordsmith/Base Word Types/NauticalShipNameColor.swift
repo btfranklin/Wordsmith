@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct NauticalShipNameColorGenerator: TextComponent {
+public struct NauticalShipNameColor: TextComponent {
 
     private static let options: [String] = [
         "amber",
@@ -22,6 +22,6 @@ public struct NauticalShipNameColorGenerator: TextComponent {
     public init() {}
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
-        NauticalShipNameColorGenerator.options.randomElement(using: &randomNumberGenerator)!
+        NauticalShipNameColor.options.randomElement(using: &randomNumberGenerator)!
     }
 }

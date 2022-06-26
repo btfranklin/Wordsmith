@@ -2,12 +2,12 @@
 
 import Foundation
 
-public struct AdjectiveGenerator: TextComponent {
+public struct Adverb: TextComponent {
 
     private static let options: [String] = {
         let decoder = JSONDecoder()
         guard
-            let url = Bundle.module.url(forResource: "Adjectives", withExtension: "json"),
+            let url = Bundle.module.url(forResource: "Adverbs", withExtension: "json"),
             let data = try? Data(contentsOf: url),
             let adjectives = try? decoder.decode([String].self, from: data)
         else {
@@ -20,6 +20,6 @@ public struct AdjectiveGenerator: TextComponent {
     public init() {}
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
-        AdjectiveGenerator.options.randomElement(using: &randomNumberGenerator)!
+        Adverb.options.randomElement(using: &randomNumberGenerator)!
     }
 }

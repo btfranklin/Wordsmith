@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct ShipNameAdjectiveGenerator: TextComponent {
+public struct ShipNameAdjective: TextComponent {
 
     private static let options: [String] = [
         "adamantine",
@@ -50,6 +50,6 @@ public struct ShipNameAdjectiveGenerator: TextComponent {
     public init() {}
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
-        ShipNameAdjectiveGenerator.options.randomElement(using: &randomNumberGenerator)!
+        ShipNameAdjective.options.randomElement(using: &randomNumberGenerator)!
     }
 }

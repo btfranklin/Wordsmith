@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct LocationAdjectiveGenerator: TextComponent {
+public struct LocationAdjective: TextComponent {
 
     private static let options: [String] = [
         "ancient",
@@ -54,6 +54,6 @@ public struct LocationAdjectiveGenerator: TextComponent {
     public init() {}
     
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
-        LocationAdjectiveGenerator.options.randomElement(using: &randomNumberGenerator)!
+        LocationAdjective.options.randomElement(using: &randomNumberGenerator)!
     }
 }

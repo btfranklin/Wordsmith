@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct ArticleGenerator: TextComponent {
+public struct Article: TextComponent {
 
     private let isBeforeVowel: Bool
 

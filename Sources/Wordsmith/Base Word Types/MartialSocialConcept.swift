@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct MartialSocialConceptGenerator: TextComponent {
+public struct MartialSocialConcept: TextComponent {
 
     private static let options: [String] = [
         "ambush",
@@ -47,6 +47,6 @@ public struct MartialSocialConceptGenerator: TextComponent {
     public init() {}
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
-        MartialSocialConceptGenerator.options.randomElement(using: &randomNumberGenerator)!
+        MartialSocialConcept.options.randomElement(using: &randomNumberGenerator)!
     }
 }

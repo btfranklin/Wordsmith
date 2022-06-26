@@ -7,71 +7,71 @@ public struct SimpleWorkTitleGenerator: TextComponent {
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
         OneOf {
 
-            NounGenerator(isPlural: Bool.random(using: &randomNumberGenerator))
+            Noun(isPlural: Bool.random(using: &randomNumberGenerator))
 
-            NounGenerator().prefixedByArticle()
+            Noun().prefixedByArticle()
 
-            NounGenerator().prefixedByDeterminer()
+            Noun().prefixedByDeterminer()
 
-            AdjectiveGenerator()
+            Adjective()
 
-            AdverbGenerator()
+            Adverb()
 
-            VerbGenerator(tense:.presentPerfect)
+            Verb(tense:.presentPerfect)
 
             PersonNameGenerator()
 
             TownNameGenerator()
 
-            UCBerkeleyEmotionGenerator()
+            UCBerkeleyEmotion()
 
-            UCBerkeleyEmotionGenerator().prefixedByDeterminer()
+            UCBerkeleyEmotion().prefixedByDeterminer()
 
             CriminalGangNameGenerator()
 
             Text(separator: " ") {
                 OneOf {
-                    UCBerkeleyEmotionGenerator()
-                    MartialSocialConceptGenerator()
+                    UCBerkeleyEmotion()
+                    MartialSocialConcept()
                 }
                 "in"
                 TownNameGenerator()
             }
 
             Text(separator: " ") {
-                AdjectiveGenerator()
-                VerbGenerator(tense: .presentPerfect)
+                Adjective()
+                Verb(tense: .presentPerfect)
             }
 
             Text(separator: " ") {
-                TimeOfDayGenerator()
-                VerbGenerator(tense: .present)
+                TimeOfDay()
+                Verb(tense: .present)
             }
 
             Text(separator: " ") {
-                TimeOfDayGenerator()
-                NounGenerator(isPlural: Bool.random(using: &randomNumberGenerator))
+                TimeOfDay()
+                Noun(isPlural: Bool.random(using: &randomNumberGenerator))
             }
 
             Text(separator: " ") {
-                AdjectiveGenerator()
-                NounGenerator(isPlural: Bool.random(using: &randomNumberGenerator))
+                Adjective()
+                Noun(isPlural: Bool.random(using: &randomNumberGenerator))
             }
 
             Text(separator: " ") {
-                AdjectiveGenerator().prefixedByArticle()
-                NounGenerator()
+                Adjective().prefixedByArticle()
+                Noun()
             }
 
             Text(separator: " ") {
-                AdjectiveGenerator().prefixedByDeterminer()
-                NounGenerator()
+                Adjective().prefixedByDeterminer()
+                Noun()
             }
 
             Text(separator: " ") {
-                MartialSocialConceptGenerator()
+                MartialSocialConcept()
                 "and"
-                MartialSocialConceptGenerator()
+                MartialSocialConcept()
             }
 
             Text(separator: " ") {
@@ -84,15 +84,15 @@ public struct SimpleWorkTitleGenerator: TextComponent {
                     "An Examination of"
                 }
                 OneOf {
-                    MartialSocialConceptGenerator()
-                    NounGenerator(isPlural: true)
+                    MartialSocialConcept()
+                    Noun(isPlural: true)
                 }
             }
 
             Text(separator: " ") {
                 "The"
                 Maybe {
-                    AdjectiveGenerator()
+                    Adjective()
                 }
                 OneOf {
                     "Adventures"
@@ -113,7 +113,7 @@ public struct SimpleWorkTitleGenerator: TextComponent {
             Text(separator: " ") {
                 "The"
                 Maybe {
-                    AdjectiveGenerator()
+                    Adjective()
                 }
                 OneOf {
                     "Adventures"
@@ -130,9 +130,9 @@ public struct SimpleWorkTitleGenerator: TextComponent {
             Text(separator: " ") {
                 "The"
                 Maybe {
-                    AdjectiveGenerator()
+                    Adjective()
                 }
-                NounGenerator(isPlural: Bool.random(using: &randomNumberGenerator))
+                Noun(isPlural: Bool.random(using: &randomNumberGenerator))
                 OneOf {
                     "in"
                     "of"

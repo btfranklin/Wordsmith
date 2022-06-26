@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct UCBerkeleyEmotionGenerator: TextComponent {
+public struct UCBerkeleyEmotion: TextComponent {
 
     private static let options: [String] = [
         "admiration",
@@ -35,6 +35,6 @@ public struct UCBerkeleyEmotionGenerator: TextComponent {
     public init() {}
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
-        UCBerkeleyEmotionGenerator.options.randomElement(using: &randomNumberGenerator)!
+        UCBerkeleyEmotion.options.randomElement(using: &randomNumberGenerator)!
     }
 }

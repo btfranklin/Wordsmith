@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct PrimitiveWeaponGenerator: TextComponent {
+public struct PrimitiveWeapon: TextComponent {
 
     private static let options: [String] = [
         "sword",
@@ -26,7 +26,7 @@ public struct PrimitiveWeaponGenerator: TextComponent {
     }
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
-        var value = PrimitiveWeaponGenerator.options.randomElement(using: &randomNumberGenerator)!
+        var value = PrimitiveWeapon.options.randomElement(using: &randomNumberGenerator)!
 
         if isPlural {
             if value.hasSuffix("ife") {

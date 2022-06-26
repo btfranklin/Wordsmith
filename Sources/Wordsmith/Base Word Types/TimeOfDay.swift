@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct TimeOfDayGenerator: TextComponent {
+public struct TimeOfDay: TextComponent {
 
     private static let options: [String] = [
         "midnight",
@@ -20,6 +20,6 @@ public struct TimeOfDayGenerator: TextComponent {
     public init() {}
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
-        TimeOfDayGenerator.options.randomElement(using: &randomNumberGenerator)!
+        TimeOfDay.options.randomElement(using: &randomNumberGenerator)!
     }
 }

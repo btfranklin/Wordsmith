@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct NauticalShipNameObjectGenerator: TextComponent {
+public struct NauticalShipNameObject: TextComponent {
 
     private static let options: [String] = [
         "blade",
@@ -62,6 +62,6 @@ public struct NauticalShipNameObjectGenerator: TextComponent {
     public init() {}
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
-        NauticalShipNameObjectGenerator.options.randomElement(using: &randomNumberGenerator)!
+        NauticalShipNameObject.options.randomElement(using: &randomNumberGenerator)!
     }
 }

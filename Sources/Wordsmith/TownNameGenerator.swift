@@ -63,13 +63,13 @@ public struct TownNameGenerator: TextComponent {
 
         case 32...35:
             generator = Text(separator: " ") {
-                LocationAdjectiveGenerator().firstUppercased()
+                LocationAdjective().firstUppercased()
                 TownNameGenerator.nameSuffixWords.randomElement(using: &randomNumberGenerator)!
             }
 
         case 36...38:
             generator = Text(separator: " ") {
-                LocationAdjectiveGenerator().firstUppercased()
+                LocationAdjective().firstUppercased()
                 TownNameGenerator.nameRareSuffixWords.randomElement(using: &randomNumberGenerator)!
             }
 

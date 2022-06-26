@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct VillainousPersonNounGenerator: TextComponent {
+public struct VillainousPersonNoun: TextComponent {
 
     private static let options: [String] = [
         "bandit",
@@ -85,7 +85,7 @@ public struct VillainousPersonNounGenerator: TextComponent {
     }
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
-        var text = VillainousPersonNounGenerator.options.randomElement(using: &randomNumberGenerator)!
+        var text = VillainousPersonNoun.options.randomElement(using: &randomNumberGenerator)!
 
         if isPlural {
             if text.hasSuffix("ay") || text.hasSuffix("ey") || text.hasSuffix("iy") || text.hasSuffix("oy") || text.hasSuffix("uy") {

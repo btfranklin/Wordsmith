@@ -9,39 +9,39 @@ public struct BandNameGenerator: TextComponent {
 
             Text(separator: " ") {
                 "The"
-                AdjectiveGenerator().capitalized()
+                Adjective().capitalized()
             }
 
             Text(separator: " ") {
                 "The"
-                NounGenerator().capitalized()
+                Noun().capitalized()
             }
 
             Text(separator: " ") {
                 "The"
-                NounGenerator(isPlural: true).capitalized()
+                Noun(isPlural: true).capitalized()
             }
 
             Text(separator: " ") {
-                AdjectiveGenerator()
-                NounGenerator()
+                Adjective()
+                Noun()
             }.capitalized()
 
             Text(separator: " ") {
                 "The"
-                AdjectiveGenerator()
-                NounGenerator(isPlural: true)
+                Adjective()
+                Noun(isPlural: true)
             }.capitalized()
 
             Text(separator: " ") {
                 GivenNameGenerator()
                 "and the"
-                NounGenerator(isPlural: true).capitalized()
+                Noun(isPlural: true).capitalized()
             }
 
             Text(separator: " ") {
                 GivenNameGenerator().possessiveForm()
-                NounGenerator(isPlural: true).capitalized()
+                Noun(isPlural: true).capitalized()
             }
         }.makeText(using: &randomNumberGenerator)
     }

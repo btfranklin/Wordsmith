@@ -15,12 +15,12 @@ public struct CriminalGangNameGenerator: TextComponent {
             if Bool.random(using: &randomNumberGenerator) {
                 generator = Text(separator: " ") {
                     GivenNameGenerator().possessiveForm()
-                    VillainousPersonNounGenerator(isPlural: true)
+                    VillainousPersonNoun(isPlural: true)
                 }.titleCased()
             } else {
                 generator = Text(separator: " ") {
                     GivenNameGenerator().possessiveForm()
-                    PrimitiveWeaponGenerator(isPlural: true)
+                    PrimitiveWeapon(isPlural: true)
                 }.titleCased()
             }
 
@@ -28,19 +28,19 @@ public struct CriminalGangNameGenerator: TextComponent {
             switch Int.random(in: 1...6, using: &randomNumberGenerator) {
             case 1:
                 generator = Text(separator: " ") {
-                    MartialSocialConceptGenerator()
-                    VillainousPersonNounGenerator(isPlural: true)
+                    MartialSocialConcept()
+                    VillainousPersonNoun(isPlural: true)
                 }
 
             case 2:
                 generator = Text(separator: " ") {
-                    PrimitiveWeaponGenerator()
-                    VillainousPersonNounGenerator(isPlural: true)
+                    PrimitiveWeapon()
+                    VillainousPersonNoun(isPlural: true)
                 }
 
             case 3:
                 generator = Text(separator: " ") {
-                    VillainousPersonNounGenerator(isPlural: true)
+                    VillainousPersonNoun(isPlural: true)
                     "of"
                     TownNameGenerator()
                 }
@@ -48,19 +48,19 @@ public struct CriminalGangNameGenerator: TextComponent {
             case 4:
                 generator = Text(separator: " ") {
                     TownNameGenerator()
-                    VillainousPersonNounGenerator(isPlural: true)
+                    VillainousPersonNoun(isPlural: true)
                 }
 
             case 5:
                 generator = Text(separator: " ") {
-                    AdjectiveGenerator()
-                    VillainousPersonNounGenerator(isPlural: true)
+                    Adjective()
+                    VillainousPersonNoun(isPlural: true)
                 }
 
             default:
                 generator = Text(separator: " ") {
-                    AdjectiveGenerator()
-                    VillainousPersonNounGenerator(isPlural: true)
+                    Adjective()
+                    VillainousPersonNoun(isPlural: true)
                     "of"
                     TownNameGenerator()
                 }

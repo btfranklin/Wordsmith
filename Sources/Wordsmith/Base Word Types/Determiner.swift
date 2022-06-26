@@ -1,6 +1,6 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct DeterminerGenerator: TextComponent {
+public struct Determiner: TextComponent {
 
     private static let options: [String] = [
         "a",
@@ -19,7 +19,7 @@ public struct DeterminerGenerator: TextComponent {
     }
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
-        var value = DeterminerGenerator.options.randomElement(using: &randomNumberGenerator)!
+        var value = Determiner.options.randomElement(using: &randomNumberGenerator)!
 
         if value == "a" && isBeforeVowel {
             value = "an"
