@@ -9,7 +9,7 @@ public struct NauticalShipNameGenerator: TextComponent {
 
         switch Int.random(in: 1...18, using: &randomNumberGenerator) {
         case 1...4:
-            generator = GivenNameGenerator(gender: .female)
+            generator = GivenName(gender: .female)
 
         case 5...7:
             generator = MartialSocialConcept().firstUppercased()
@@ -74,7 +74,7 @@ public struct NauticalShipNameGenerator: TextComponent {
             generator = Text(separator: " ") {
                 (Bool.random(probability: 0.33, using: &randomNumberGenerator)
                  ? MartialSocialConcept().firstUppercased()
-                 : GivenNameGenerator(gender: Bool.random(probability: 0.75, using: &randomNumberGenerator) ? .female : .male)
+                 : GivenName(gender: Bool.random(probability: 0.75, using: &randomNumberGenerator) ? .female : .male)
                 ).possessiveForm()
                 Text {
                     if Bool.random(using: &randomNumberGenerator) {

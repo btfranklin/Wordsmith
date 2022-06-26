@@ -30,33 +30,33 @@ public struct TownNameGenerator: TextComponent {
         switch Int.random(in: 1...100, using: &randomNumberGenerator) {
         case 1...9:
             generator = Text(separator: " ") {
-                SurnameGenerator()
+                Surname()
                 TownNameGenerator.nameSuffixWords.randomElement(using: &randomNumberGenerator)!
             }
 
         case 10...19:
             generator = Text(separator: " ") {
                 TownNameGenerator.namePrefixWords.randomElement(using: &randomNumberGenerator)!
-                SurnameGenerator()
+                Surname()
             }
 
         case 20...24:
             generator = Text(separator: " ") {
-                SurnameGenerator()
+                Surname()
                 TownNameGenerator.nameRareSuffixWords.randomElement(using: &randomNumberGenerator)!
             }
 
         case 25...29:
             generator = Text(separator: " ") {
                 TownNameGenerator.nameRarePrefixWords.randomElement(using: &randomNumberGenerator)!
-                SurnameGenerator()
+                Surname()
             }
 
         case 30...31:
             generator = Text(separator: " ") {
                 "New"
                 Text {
-                    SurnameGenerator()
+                    Surname()
                     TownNameGenerator.nameSuffixes.randomElement(using: &randomNumberGenerator)!
                 }
             }
@@ -75,7 +75,7 @@ public struct TownNameGenerator: TextComponent {
 
         default:
             generator = Text {
-                SurnameGenerator()
+                Surname()
                 TownNameGenerator.nameSuffixes.randomElement(using: &randomNumberGenerator)!
             }
         }

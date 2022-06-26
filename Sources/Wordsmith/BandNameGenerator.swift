@@ -34,13 +34,13 @@ public struct BandNameGenerator: TextComponent {
             }.capitalized()
 
             Text(separator: " ") {
-                GivenNameGenerator()
+                GivenName()
                 "and the"
                 Noun(isPlural: true).capitalized()
             }
 
             Text(separator: " ") {
-                GivenNameGenerator().possessiveForm()
+                GivenName().possessiveForm()
                 Noun(isPlural: true).capitalized()
             }
         }.makeText(using: &randomNumberGenerator)

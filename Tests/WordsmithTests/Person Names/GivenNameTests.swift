@@ -6,14 +6,14 @@ import XCTest
 class GivenNameTests: XCTestCase {
 
     func testExamples() {
-        ExamplesTestUtil.printExamples(using: GivenNameGenerator())
+        ExamplesTestUtil.printExamples(using: GivenName())
     }
 
     func testUniqueness() {
-        UniquenessTestUtil.countUniqueValuesProduced(using: GivenNameGenerator(), consecutiveRetryLimit: 100)
+        UniquenessTestUtil.countUniqueValuesProduced(using: GivenName(), consecutiveRetryLimit: 100)
     }
 
     func testRepeatableResults() {
-        RepeatableResultsTestUtil.confirmRepeatableResults(using: GivenNameGenerator())
+        RepeatableResultsTestUtil.confirmRepeatableResults(using: GivenName())
     }
 }

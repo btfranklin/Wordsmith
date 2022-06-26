@@ -14,12 +14,12 @@ public struct CriminalGangNameGenerator: TextComponent {
 
             if Bool.random(using: &randomNumberGenerator) {
                 generator = Text(separator: " ") {
-                    GivenNameGenerator().possessiveForm()
+                    GivenName().possessiveForm()
                     VillainousPersonNoun(isPlural: true)
                 }.titleCased()
             } else {
                 generator = Text(separator: " ") {
-                    GivenNameGenerator().possessiveForm()
+                    GivenName().possessiveForm()
                     PrimitiveWeapon(isPlural: true)
                 }.titleCased()
             }

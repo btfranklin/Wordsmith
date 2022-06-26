@@ -8,7 +8,7 @@ public struct FictionalMineralNameGenerator: TextComponent {
         var text: String
 
         let rootWord = OneOf {
-            GivenNameGenerator()
+            GivenName()
             WeirdNameGenerator(syllableCount: 2, allowHyphen: false, allowApostrophe: false)
         }.makeText(using: &randomNumberGenerator).lowercased()
 

@@ -6,14 +6,14 @@ import XCTest
 class SurnameTests: XCTestCase {
 
     func testExamples() {
-        ExamplesTestUtil.printExamples(using: SurnameGenerator())
+        ExamplesTestUtil.printExamples(using: Surname())
     }
 
     func testUniqueness() {
-        UniquenessTestUtil.countUniqueValuesProduced(using: SurnameGenerator(), consecutiveRetryLimit: 100)
+        UniquenessTestUtil.countUniqueValuesProduced(using: Surname(), consecutiveRetryLimit: 100)
     }
 
     func testRepeatableResults() {
-        RepeatableResultsTestUtil.confirmRepeatableResults(using: SurnameGenerator())
+        RepeatableResultsTestUtil.confirmRepeatableResults(using: Surname())
     }
 }

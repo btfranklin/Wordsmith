@@ -2,7 +2,7 @@
 
 import Foundation
 
-public struct GivenNameGenerator: TextComponent {
+public struct GivenName: TextComponent {
 
     static let maleNameOptions: [String] = {
         let decoder = JSONDecoder()
@@ -43,9 +43,9 @@ public struct GivenNameGenerator: TextComponent {
 
         switch gender {
         case .male:
-            value = GivenNameGenerator.maleNameOptions.randomElement(using: &randomNumberGenerator)!
+            value = GivenName.maleNameOptions.randomElement(using: &randomNumberGenerator)!
         case .female:
-            value = GivenNameGenerator.femaleNameOptions.randomElement(using: &randomNumberGenerator)!
+            value = GivenName.femaleNameOptions.randomElement(using: &randomNumberGenerator)!
         }
 
         return value

@@ -19,7 +19,7 @@ public struct SimpleWorkTitleGenerator: TextComponent {
 
             Verb(tense:.presentPerfect)
 
-            PersonNameGenerator()
+            PersonName()
 
             TownNameGenerator()
 
@@ -124,7 +124,7 @@ public struct SimpleWorkTitleGenerator: TextComponent {
                     "Escapades"
                 }
                 "of"
-                PersonNameGenerator()
+                PersonName()
             }
 
             Text(separator: " ") {

@@ -2,7 +2,7 @@
 
 import Foundation
 
-public struct SurnameGenerator: TextComponent {
+public struct Surname: TextComponent {
 
     static let options: [String] = {
         let decoder = JSONDecoder()
@@ -20,6 +20,6 @@ public struct SurnameGenerator: TextComponent {
     public init() {}
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
-        SurnameGenerator.options.randomElement(using: &randomNumberGenerator)!
+        Surname.options.randomElement(using: &randomNumberGenerator)!
     }
 }
