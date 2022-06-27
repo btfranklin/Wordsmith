@@ -10,10 +10,6 @@ Wordsmith
 
 `Wordsmith` is a Swift package containing utilities to assist with the generation of interesting creative text elements, such as realistic names of humans, artwork, and ships.
 
-## Playgrounds
-
-In the [Playgrounds folder](https://github.com/btfranklin/Wordsmith/tree/main/Playgrounds), you will find examples of how to use many of the package's text generators.
-
 ## License
 
 `Wordsmith` was written by B.T. Franklin ([@btfranklin](https://github.com/btfranklin)) from 2018 onward and is licensed under the [MIT](https://opensource.org/licenses/MIT) license. See [LICENSE.md](LICENSE.md).
