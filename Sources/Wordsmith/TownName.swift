@@ -2,84 +2,106 @@
 
 public struct TownName: TextComponent {
 
-    static let nameRarePrefixWords = [
-        "Saint", "Mount", "Lake"
-    ]
-
-    static let namePrefixWords = [
-        "Fort", "Port", "Cape"
-    ]
-
-    static let nameRareSuffixWords = [
-        "River", "Hill", "Town", "Beach", "Village"
-    ]
-
-    static let nameSuffixWords = [
-        "Bay", "Point", "City", "Park"
-    ]
-
-    static let nameSuffixes = [
-        "ton", "burg", "ville", "town", "dale"
-    ]
-
     public init() {}
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
-        let generator: TextComponent
+        let component: TextComponent
 
         switch Int.random(in: 1...100, using: &randomNumberGenerator) {
         case 1...9:
-            generator = Text(separator: " ") {
+            component = Text(separator: " ") {
                 Surname()
-                TownName.nameSuffixWords.randomElement(using: &randomNumberGenerator)!
+                OneOf {
+                    "Bay"
+                    "Point"
+                    "City"
+                    "Park"
+                }
             }
 
         case 10...19:
-            generator = Text(separator: " ") {
-                TownName.namePrefixWords.randomElement(using: &randomNumberGenerator)!
+            component = Text(separator: " ") {
+                OneOf {
+                    "Fort"
+                    "Port"
+                    "Cape"
+                }
                 Surname()
             }
 
         case 20...24:
-            generator = Text(separator: " ") {
+            component = Text(separator: " ") {
                 Surname()
-                TownName.nameRareSuffixWords.randomElement(using: &randomNumberGenerator)!
+                OneOf {
+                    "River"
+                    "Hill"
+                    "Town"
+                    "Beach"
+                    "Village"
+                }
             }
 
         case 25...29:
-            generator = Text(separator: " ") {
-                TownName.nameRarePrefixWords.randomElement(using: &randomNumberGenerator)!
+            component = Text(separator: " ") {
+                OneOf {
+                    "Saint"
+                    "Mount"
+                    "Lake"
+                }
                 Surname()
             }
 
         case 30...31:
-            generator = Text(separator: " ") {
+            component = Text(separator: " ") {
                 "New"
                 Text {
                     Surname()
-                    TownName.nameSuffixes.randomElement(using: &randomNumberGenerator)!
+                    OneOf {
+                        "ton"
+                        "burg"
+                        "ville"
+                        "town"
+                        "dale"
+                    }
                 }
             }
 
         case 32...35:
-            generator = Text(separator: " ") {
+            component = Text(separator: " ") {
                 LocationAdjective().firstUppercased()
-                TownName.nameSuffixWords.randomElement(using: &randomNumberGenerator)!
+                OneOf {
+                    "Bay"
+                    "Point"
+                    "City"
+                    "Park"
+                }
             }
 
         case 36...38:
-            generator = Text(separator: " ") {
+            component = Text(separator: " ") {
                 LocationAdjective().firstUppercased()
-                TownName.nameRareSuffixWords.randomElement(using: &randomNumberGenerator)!
+                OneOf {
+                    "River"
+                    "Hill"
+                    "Town"
+                    "Beach"
+                    "Village"
+                }
             }
 
         default:
-            generator = Text {
+            component = Text {
                 Surname()
-                TownName.nameSuffixes.randomElement(using: &randomNumberGenerator)!
+                OneOf {
+                    "ton"
+                    "burg"
+                    "ville"
+                    "town"
+                    "dale"
+                }
             }
         }
 
-        return generator.makeText(using: &randomNumberGenerator)
+        return component.makeText(using: &randomNumberGenerator)
     }
 }
