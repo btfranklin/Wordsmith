@@ -17,9 +17,4 @@ public struct Text: TextComponent {
         }
         return textComponents.joined(separator: separator)
     }
-
-    public func makeText() -> String {
-        var randomNumberGenerator = SystemRandomNumberGenerator()
-        return makeText(using: &randomNumberGenerator)
-    }
 }
