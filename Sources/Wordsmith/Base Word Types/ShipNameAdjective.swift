@@ -10,6 +10,7 @@ public struct ShipNameAdjective: TextComponent {
         "beastly",
         "beautiful",
         "courageous",
+        "dancing",
         "dastardly",
         "draconian",
         "elder",
