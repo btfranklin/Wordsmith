@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "Wordsmith",
     platforms: [
-        .macOS(.v11), .iOS(.v14), .tvOS(.v14), .watchOS(.v7)
+        .macOS(.v12), .iOS(.v15), .tvOS(.v16), .watchOS(.v9)
     ],
     products: [
         .library(
@@ -34,6 +34,7 @@ let package = Package(
                 .process("Assets/Adverbs.json"),
                 .process("Assets/Nouns.json"),
                 .process("Assets/Verbs.json"),
+                .process("Assets/Chemical Compound Names.json"),
                 .process("Assets/Common Female Given Names.json"),
                 .process("Assets/Common Male Given Names.json"),
                 .process("Assets/Common Surnames.json"),
