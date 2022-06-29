@@ -30,7 +30,7 @@ public struct SimpleWorkTitle: TextComponent {
             CriminalGangName()
 
             Text(separator: " ") {
-                OneOf {
+                Either {
                     UCBerkeleyEmotion()
                     MartialSocialConcept()
                 }
@@ -83,7 +83,7 @@ public struct SimpleWorkTitle: TextComponent {
                     "Commentary on"
                     "An Examination of"
                 }
-                OneOf {
+                Either {
                     MartialSocialConcept()
                     Noun(isPlural: true)
                 }
@@ -133,7 +133,7 @@ public struct SimpleWorkTitle: TextComponent {
                     Adjective()
                 }
                 Noun(isPlural: Bool.random(using: &randomNumberGenerator))
-                OneOf {
+                Either {
                     "in"
                     "of"
                 }

@@ -75,7 +75,7 @@ public struct UnusualWorkTitle: TextComponent {
                     "Because"
                 }
 
-                OneOf {
+                Either {
                     OneOf {
                         Text(separator: " ") {
                             Pronoun(isSingular: false, isThirdPerson: Bool.random(using: &randomNumberGenerator))
@@ -137,7 +137,7 @@ public struct UnusualWorkTitle: TextComponent {
                 }
             }
 
-            OneOf {
+            Either {
                 Text(separator: " ") {
                     Noun()
                     "and"
