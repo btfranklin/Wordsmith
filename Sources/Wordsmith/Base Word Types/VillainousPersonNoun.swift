@@ -106,7 +106,7 @@ public struct VillainousPersonNoun: TextComponent {
                     text += "ves"
                 }
 
-            } else if text.hasSuffix("rf") {
+            } else if text.hasSuffix("rf") || text.hasSuffix("ief") {
                 text = text.dropLast().description
                 text += "ves"
 
