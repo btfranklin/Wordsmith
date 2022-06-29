@@ -5,90 +5,92 @@ public struct NauticalShipName: TextComponent {
     public init() {}
 
     public func makeText(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
-        let generator: TextComponent
+        let component: TextComponent
 
         switch Int.random(in: 1...18, using: &randomNumberGenerator) {
         case 1...4:
-            generator = GivenName(gender: .female)
+            component = GivenName(gender: .female)
 
         case 5...7:
-            generator = MartialSocialConcept().firstUppercased()
+            component = MartialSocialConcept().firstUppercased()
 
         case 8:
-            generator = TownName()
+            component = TownName()
 
         case 9:
-            generator = WeirdName(syllableCount: 3)
+            component = WeirdName(syllableCount: 3)
 
         case 10:
-            generator = NauticalShipNameObject().firstUppercased()
+            component = NauticalShipNameObject().firstUppercased()
 
         case 11:
-            generator = ShipNameAdjective().firstUppercased()
+            component = ShipNameAdjective().firstUppercased()
 
         case 12:
-            generator = Text(separator: " ") {
+            component = Text(separator: " ") {
                 NauticalShipNameColor()
-                Bool.random(probability: 0.75, using: &randomNumberGenerator)
-                ? NauticalShipNameObject() as TextComponent
-                : PrimitiveWeapon() as TextComponent
+                Either(firstOptionProbability: 0.75) {
+                    NauticalShipNameObject()
+                    PrimitiveWeapon()
+                }
             }.capitalized()
 
         case 13...14:
-            generator = Text(separator: " ") {
+            component = Text(separator: " ") {
                 ShipNameAdjective()
-                Bool.random(probability: 0.85, using: &randomNumberGenerator)
-                ? NauticalShipNameObject() as TextComponent
-                : PrimitiveWeapon() as TextComponent
+                Either(firstOptionProbability: 0.85) {
+                    NauticalShipNameObject()
+                    PrimitiveWeapon()
+                }
             }.capitalized()
 
         case 15:
-            generator = Text(separator: " ") {
+            component = Text(separator: " ") {
                 TimeOfDay()
-                Bool.random(probability: 0.75, using: &randomNumberGenerator)
-                ? MartialSocialConcept() as TextComponent
-                : PrimitiveWeapon() as TextComponent
+                Either(firstOptionProbability: 0.75) {
+                    MartialSocialConcept()
+                    PrimitiveWeapon()
+                }
             }.capitalized()
 
         case 16:
-            generator = Text(separator: " ") {
+            component = Text(separator: " ") {
                 TownName()
-                Bool.random(probability: 0.85, using: &randomNumberGenerator)
-                ? NauticalShipNameObject() as TextComponent
-                : PrimitiveWeapon() as TextComponent
+                Either(firstOptionProbability: 0.85) {
+                    NauticalShipNameObject()
+                    PrimitiveWeapon()
+                }
             }.capitalized()
 
         case 17:
-            generator = Text(separator: " ") {
-                (Bool.random(using: &randomNumberGenerator)
-                 ? NauticalShipNameObject() as TextComponent
-                 : PrimitiveWeapon()
-                ).firstUppercased()
+            component = Text(separator: " ") {
+                Either {
+                    NauticalShipNameObject()
+                    PrimitiveWeapon()
+                }.firstUppercased()
                 "of"
-                Bool.random(using: &randomNumberGenerator)
-                ? MartialSocialConcept().firstUppercased()
-                : TownName()
+                Either {
+                    MartialSocialConcept().firstUppercased()
+                    TownName()
+                }
             }
 
         default:
-            generator = Text(separator: " ") {
-                (Bool.random(probability: 0.33, using: &randomNumberGenerator)
-                 ? MartialSocialConcept().firstUppercased()
-                 : GivenName(gender: Bool.random(probability: 0.75, using: &randomNumberGenerator) ? .female : .male)
-                ).possessiveForm()
-                Text {
-                    if Bool.random(using: &randomNumberGenerator) {
-                        (Bool.random(using: &randomNumberGenerator)
-                         ? NauticalShipNameObject() as TextComponent
-                         : PrimitiveWeapon()
-                        )
-                    } else {
-                        MartialSocialConcept()
+            component = Text(separator: " ") {
+                Either(firstOptionProbability: 0.33) {
+                    MartialSocialConcept().firstUppercased()
+                    GivenName(gender: Bool.random(probability: 0.75, using: &randomNumberGenerator) ? .female : .male)
+                }.possessiveForm()
+                Either {
+                    Either {
+                        NauticalShipNameObject()
+                        PrimitiveWeapon()
                     }
+                    MartialSocialConcept()
                 }.firstUppercased()
             }
         }
 
-        return generator.makeText(using: &randomNumberGenerator)
+        return component.makeText(using: &randomNumberGenerator)
     }
 }
