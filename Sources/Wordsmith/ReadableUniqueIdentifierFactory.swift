@@ -6,7 +6,7 @@ public enum ReadableUniqueIdentifierFactory {
     
     public static func makeIdentifier(using randomNumberGenerator: inout some RandomNumberGenerator) -> String {
         Text(separator: "_") {
-            OneOf {
+            Either {
                 Text(separator: "_") {
                     Adjective()
                     Noun()
