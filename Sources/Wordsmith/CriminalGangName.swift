@@ -14,7 +14,7 @@ public struct CriminalGangName: TextComponent {
 
             component = Text(separator: " ") {
                 GivenName().possessiveForm()
-                OneOf {
+                Either {
                     VillainousPersonNoun(isPlural: true)
                     PrimitiveWeapon(isPlural: true)
                 }
