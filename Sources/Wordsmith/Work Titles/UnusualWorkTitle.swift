@@ -150,6 +150,14 @@ public struct UnusualWorkTitle: TextComponent {
                 }
             }
 
+            Text(separator: " ") {
+                Text {
+                    MartialSocialConcept()
+                    ":"
+                }
+                UnusualWorkTitle()
+            }
+
         }.titleCased().makeText(using: &randomNumberGenerator)
     }
 }
