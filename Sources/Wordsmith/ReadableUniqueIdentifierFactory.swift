@@ -16,7 +16,7 @@ public enum ReadableUniqueIdentifierFactory {
                     Verb(tense: .presentPerfect)
                 }
             }
-            String(format:"%02X", Date.now.timeIntervalSinceReferenceDate)
+            String(format:"%02X", Date.timeIntervalSinceReferenceDate)
         }.makeText(using: &randomNumberGenerator)
     }
     
