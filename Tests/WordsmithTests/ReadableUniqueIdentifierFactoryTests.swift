@@ -16,6 +16,9 @@ class ReadableUniqueIdentifierFactoryTests: XCTestCase {
         let seedState = UInt64.random(in: UInt64.min...UInt64.max)
 
         // Confirm that two short sequences don't match even with the same seed value
+        print("----- Perceived Date.now: \(Date.now)")
+        print("----- Perceived Date.now.timeIntervalSinceReferenceDate: \(Date.now.timeIntervalSinceReferenceDate)")
+        print("----- Perceived Date.timeIntervalSinceReferenceDate: \(Date.timeIntervalSinceReferenceDate)")
         var seededRNG = SeededRandomNumberGenerator(state: seedState)
         var resultList1: [String] = []
         for _ in 1...5 {
