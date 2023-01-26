@@ -16,8 +16,9 @@ public enum ReadableUniqueIdentifierFactory {
                     Verb(tense: .presentPerfect)
                 }
             }
-            String(format:"%02X", Date.timeIntervalSinceReferenceDate)
         }.makeText(using: &randomNumberGenerator)
+            .appending("_")
+            .appending(String(UInt64(Date.timeIntervalSinceReferenceDate*1000000), radix: 36, uppercase: true))
     }
     
     public static func makeIdentifier() -> String {
