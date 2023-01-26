@@ -1,10 +1,10 @@
 //  Created by B.T. Franklin on 6/18/22
 
-public struct PrefixedByDeterminerText: TextComponent {
+fileprivate struct PrefixedByDeterminerText: TextComponent {
 
     private let wrappedTextComponent: TextComponent
 
-    init(wrappedTextComponent: TextComponent) {
+    fileprivate init(wrappedTextComponent: some TextComponent) {
         self.wrappedTextComponent = wrappedTextComponent
     }
 
@@ -16,7 +16,7 @@ public struct PrefixedByDeterminerText: TextComponent {
 }
 
 extension TextComponent {
-    public func prefixedByDeterminer() -> TextComponent {
+    public func prefixedByDeterminer() -> some TextComponent {
         PrefixedByDeterminerText(wrappedTextComponent: self)
     }
 }

@@ -1,10 +1,10 @@
 //  Created by B.T. Franklin on 6/11/22
 
-public struct FirstUppercasedText: TextComponent {
+fileprivate struct FirstUppercasedText: TextComponent {
 
     private let wrappedTextComponent: TextComponent
 
-    init(wrappedTextComponent: TextComponent) {
+    fileprivate init(wrappedTextComponent: some TextComponent) {
         self.wrappedTextComponent = wrappedTextComponent
     }
 
@@ -14,7 +14,7 @@ public struct FirstUppercasedText: TextComponent {
 }
 
 extension TextComponent {
-    public func firstUppercased() -> TextComponent {
+    public func firstUppercased() -> some TextComponent {
         FirstUppercasedText(wrappedTextComponent: self)
     }
 }

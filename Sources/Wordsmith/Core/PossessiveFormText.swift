@@ -1,10 +1,10 @@
 //  Created by B.T. Franklin on 6/12/22
 
-public struct PossessiveFormText: TextComponent {
+fileprivate struct PossessiveFormText: TextComponent {
 
     private let wrappedTextComponent: TextComponent
 
-    init(wrappedTextComponent: TextComponent) {
+    fileprivate init(wrappedTextComponent: some TextComponent) {
         self.wrappedTextComponent = wrappedTextComponent
     }
 
@@ -15,7 +15,7 @@ public struct PossessiveFormText: TextComponent {
 }
 
 extension TextComponent {
-    public func possessiveForm() -> TextComponent {
+    public func possessiveForm() -> some TextComponent {
         PossessiveFormText(wrappedTextComponent: self)
     }
 }

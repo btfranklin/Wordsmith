@@ -1,10 +1,10 @@
 //  Created by B.T. Franklin on 6/20/22
 
-public struct TitleCasedText: TextComponent {
+fileprivate struct TitleCasedText: TextComponent {
 
     private let wrappedTextComponent: TextComponent
 
-    init(wrappedTextComponent: TextComponent) {
+    fileprivate init(wrappedTextComponent: some TextComponent) {
         self.wrappedTextComponent = wrappedTextComponent
     }
 
@@ -14,7 +14,7 @@ public struct TitleCasedText: TextComponent {
 }
 
 extension TextComponent {
-    public func titleCased() -> TextComponent {
+    public func titleCased() -> some TextComponent {
         TitleCasedText(wrappedTextComponent: self)
     }
 }

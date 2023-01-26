@@ -2,11 +2,11 @@
 
 import StringBooster
 
-public struct PrefixedByArticleText: TextComponent {
+fileprivate struct PrefixedByArticleText: TextComponent {
 
     private let wrappedTextComponent: TextComponent
 
-    init(wrappedTextComponent: TextComponent) {
+    fileprivate init(wrappedTextComponent: some TextComponent) {
         self.wrappedTextComponent = wrappedTextComponent
     }
 
@@ -18,7 +18,7 @@ public struct PrefixedByArticleText: TextComponent {
 }
 
 extension TextComponent {
-    public func prefixedByArticle() -> TextComponent {
+    public func prefixedByArticle() -> some TextComponent {
         PrefixedByArticleText(wrappedTextComponent: self)
     }
 }
