@@ -12,7 +12,7 @@ public struct NauticalShipName: TextComponent {
             component = GivenName(gender: .female)
 
         case 5...7:
-            component = MartialSocialConcept().firstUppercased()
+            component = MartialSocialConcept()
 
         case 8:
             component = TownName()
@@ -21,10 +21,10 @@ public struct NauticalShipName: TextComponent {
             component = WeirdName(syllableCount: 3)
 
         case 10:
-            component = NauticalShipNameObject().firstUppercased()
+            component = NauticalShipNameObject()
 
         case 11:
-            component = ShipNameAdjective().firstUppercased()
+            component = ShipNameAdjective()
 
         case 12:
             component = Text(separator: " ") {
@@ -33,7 +33,7 @@ public struct NauticalShipName: TextComponent {
                     NauticalShipNameObject()
                     PrimitiveWeapon()
                 }
-            }.capitalized()
+            }
 
         case 13...14:
             component = Text(separator: " ") {
@@ -42,7 +42,7 @@ public struct NauticalShipName: TextComponent {
                     NauticalShipNameObject()
                     PrimitiveWeapon()
                 }
-            }.capitalized()
+            }
 
         case 15:
             component = Text(separator: " ") {
@@ -51,7 +51,7 @@ public struct NauticalShipName: TextComponent {
                     MartialSocialConcept()
                     PrimitiveWeapon()
                 }
-            }.capitalized()
+            }
 
         case 16:
             component = Text(separator: " ") {
@@ -60,17 +60,17 @@ public struct NauticalShipName: TextComponent {
                     NauticalShipNameObject()
                     PrimitiveWeapon()
                 }
-            }.capitalized()
+            }
 
         case 17:
             component = Text(separator: " ") {
                 Either {
                     NauticalShipNameObject()
                     PrimitiveWeapon()
-                }.firstUppercased()
+                }
                 "of"
                 Either {
-                    MartialSocialConcept().firstUppercased()
+                    MartialSocialConcept()
                     TownName()
                 }
             }
@@ -87,10 +87,10 @@ public struct NauticalShipName: TextComponent {
                         PrimitiveWeapon()
                     }
                     MartialSocialConcept()
-                }.firstUppercased()
+                }
             }
         }
 
-        return component.makeText(using: &randomNumberGenerator)
+        return component.titleCased().makeText(using: &randomNumberGenerator)
     }
 }
