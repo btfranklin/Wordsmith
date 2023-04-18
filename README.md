@@ -6,7 +6,7 @@ Wordsmith
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/btfranklin/Wordsmith/blob/main/LICENSE)
 [![Swift Package Manager compatible](https://img.shields.io/badge/SPM-compatible-brightgreen.svg?style=flat&colorA=28a745&&colorB=4E4E4E)](https://github.com/apple/swift-package-manager)
 [![GitHub tag](https://img.shields.io/github/tag/btfranklin/Wordsmith.svg)](https://github.com/btfranklin/Wordsmith)
-[![build](https://github.com/btfranklin/Wordsmith/workflows/build/badge.svg)](https://github.com/dunesailer/btfranklin/actions?query=workflow%3Abuild)
+[![build](https://github.com/btfranklin/Wordsmith/workflows/build/badge.svg)](https://github.com/btfranklin/actions?query=workflow%3Abuild)
 
 `Wordsmith` is a Swift package containing utilities to assist with the generation of interesting creative text elements, such as realistic names of humans, artwork, and ships.
 
