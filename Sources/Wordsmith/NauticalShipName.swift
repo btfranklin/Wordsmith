@@ -18,7 +18,10 @@ public struct NauticalShipName: TextComponent {
             component = TownName()
 
         case 9:
-            component = WeirdName(syllableCount: 3)
+            component = Either {
+                WeirdName(syllableCount: 3)
+                AncientName(syllableCount: 3)
+            }
 
         case 10:
             component = NauticalShipNameObject()
