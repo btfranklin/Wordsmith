@@ -11,14 +11,13 @@ let package = Package(
     products: [
         .library(
             name: "Wordsmith",
-//            type: .static,
             targets: ["Wordsmith"]),
     ],
     dependencies: [
         .package(url: "https://github.com/btfranklin/ControlledChaos",
                     .upToNextMajor(from: "1.3.2")),
         .package(url: "https://github.com/btfranklin/StringBooster",
-                    .upToNextMajor(from: "1.2.1")),
+                    .upToNextMajor(from: "1.4.0")),
     ],
     targets: [
         .target(
