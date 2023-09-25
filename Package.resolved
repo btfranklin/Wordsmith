@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/btfranklin/StringBooster",
       "state" : {
-        "revision" : "0e68e78800dc94b0e3292d2b9fe1c44d23b0c5a6",
-        "version" : "1.2.1"
+        "revision" : "883b950220b470109ae26a17c55e50561a6c960f",
+        "version" : "1.4.0"
       }
     }
   ],
